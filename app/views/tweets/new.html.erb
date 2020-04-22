@@ -1,0 +1,5 @@
+<%= form_for :tweet, url: '/create'  do |f| %>
+  <p><%=f.label "画像をアップロード" %><br><%= f.file_field :image %></p>
+  <p><%=f.label "コメント" %><br><%= f.text_field :text %></p>
+  <p><%= f.submit value: '投稿' %></p>
+<% end %>

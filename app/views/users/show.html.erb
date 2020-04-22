@@ -1,0 +1,11 @@
+<article>
+  
+  <p><%= @nickname %>さんの投稿一覧</p>
+  <% @tweets.each do |tweet| %>
+      <image src = "<%= tweet.image %> "width= "300" height="300"></image>
+      <%= simple_format(tweet.text) %>
+      
+  <% end %>
+       <%= link_to_prev_page @tweets, '前のページ', class: "prev" %>
+       <%= link_to_next_page @tweets, '次のページ', class: "next" %>
+</article>

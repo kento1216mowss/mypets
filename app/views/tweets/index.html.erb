@@ -1,0 +1,52 @@
+  <div class = "recomend-user">
+    <% @tweets.each do |tweet| %>
+     <image src = "<%= tweet.image %>"width="193" height="130"></image>
+    <% end %> 
+  </div>
+  
+  
+  
+  
+  <article>
+    <% @tweets.each do |t| %>
+      <header>
+          <div class = "user-name">
+            <%= t.user.nickname %>
+          </div>  
+          <% if user_signed_in? && current_user.id == t.user_id %>
+              <div class="more">
+                <ul class="more_list">
+                  <li>
+                    <%= link_to '削除', "/tweets/#{t.id}", method: :delete %>
+                  </li>
+                </ul>
+              </div>
+          <% end %>
+      </header>
+      <div class ="image-box">
+           <image src = "<%= t.image %> "width= "600" height="600"></image>
+      </div>
+    <% end %>  
+      <div class = "good-box">
+        <span>
+          <btn>
+            <svg>
+              ！
+            </svg>
+          </btn>
+        </span>
+      </div>    
+      <div class = "comment-box">
+        <span>
+          <btn>
+            <svg>
+              C
+            </svg>
+          </btn>
+        </span>
+      </div>    
+       <%= link_to_prev_page @tweets, '前のページ', class: "prev" %>
+       <%= link_to_next_page @tweets, '次のページ', class: "next" %>
+      
+    
+  </article>

@@ -1,0 +1,63 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+body {
+  margin: 0;
+  background-color: yellow;
+}
+.container {
+  width: 100%;
+  margin: 0 auto;
+  
+  
+ 
+}
+header {
+  height: 80px;
+  width: 100%;
+  background-color: green;
+  margin: 0px;
+
+  
+}
+header h1 {
+  margin: 0;
+  float: left;
+  padding: 20px 0 10px 20px;
+}
+nav ul  {
+  float: right;
+   display: flex;
+}
+nav li {
+  padding: 30px 20px;
+  list-style: none;
+   
+}
+.main {
+  // height: 100px;
+  // margin: 0px auto;
+  padding:   20px 0;
+  
+}
+// index.html --------
+// .recomend-user {
+//   height: 100px;
+//   width: 700px;
+//   margin: 0 auto;
+//   background-color: red;
+  
+
+article {
+  width: 600px;
+  // height: 100%;
+  margin: 0 auto;
+  background-color: pink;
+}
+// .content_post {
+//   height: 500px;
+//   padding: 50px;
+//   margin: 10px 0;
+// }
