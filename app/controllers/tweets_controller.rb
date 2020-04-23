@@ -5,14 +5,22 @@ class TweetsController < ApplicationController
     def index
       @tweets = Tweet.all.includes(:user).order("created_at DESC").page(params[:page]).per(5)
     end
+    
+    def show
+      @tweet = Tweet.find(params[:id])
+      
+    end
+    
     def new
      
     end
+    
     def create
        @tweet = Tweet.new(image: permit_params[:image], text: permit_params[:text], user_id: current_user.id)
        @tweet.save!
        redirect_to action: 'index'
     end
+    
     def destroy
       tweet = Tweet.find(params[:id])
       if tweet.user_id = current_user.id
