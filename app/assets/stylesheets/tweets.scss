@@ -18,8 +18,13 @@ header {
   height: 80px;
   width: 100%;
   background-color: green;
-  margin: 0px;
-
+  margin: 0 ;
+  padding: 0 200px;
+  position: fixed;
+  top: 0;
+  z-index: 2;
+  
+  
   
 }
 header h1 {
@@ -39,7 +44,8 @@ nav li {
 .main {
   // height: 100px;
   // margin: 0px auto;
-  padding:   20px 0;
+  padding: 0;
+  margin: 60px auto;
   
 }
 // index.html --------

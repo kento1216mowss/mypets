@@ -8,17 +8,22 @@ class TweetsController < ApplicationController
     
     def show
       @tweet = Tweet.find(params[:id])
-      
+      @comments = @tweet.comments.includes(:user)
     end
     
     def new
+      @tweet = Tweet.new
      
     end
     
     def create
-       @tweet = Tweet.new(image: permit_params[:image], text: permit_params[:text], user_id: current_user.id)
-       @tweet.save!
-       redirect_to action: 'index'
+       @tweet = Tweet.create(image: permit_params[:image], text: permit_params[:text], user_id: current_user.id)
+       if @tweet.save
+        redirect_to action: 'index'
+       else
+        redirect_to "/tweets/new" 
+       end  
+        
     end
     
     def destroy

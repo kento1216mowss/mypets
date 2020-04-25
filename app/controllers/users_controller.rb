@@ -4,5 +4,13 @@ class UsersController < ApplicationController
     @nickname = @user.nickname
     @tweets = @user.tweets.order("created_at DESC").page(params[:page]).per(5)
   end
+  
+  def edit
+    
+  end
+   
+  def update
+    
+  end
 end
 

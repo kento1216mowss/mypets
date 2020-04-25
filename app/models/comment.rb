@@ -1,4 +1,7 @@
 class Comment < ApplicationRecord
-  belongs_to :user
-  belongs_to :tweet
+ belongs_to :tweet               #tweetsテーブルとのアソシエーション
+ belongs_to :user       
+ validates :text, presence: true
+ 
+
 end

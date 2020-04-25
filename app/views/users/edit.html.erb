@@ -1,0 +1,6 @@
+ <%= form_for current_user do |f| %>
+    <div class="field">
+        <%= f.label :nickname %> <em>(12 characters maximum)</em><br />
+        <%= f.text_field :nickname,  autofocus: true, maxlength: "12" %>
+    </div>
+ <% end %>   
