@@ -2,6 +2,9 @@
   <% if user_signed_in? && @user.id == current_user.id %>  
     <%= link_to "プロフィール編集", edit_user_path(current_user) %>
  <% end %>
+ <% if @user.image %>
+  <image src = "<%= rails_blob_path(@user.image) %>"width="250" height="250"></image>
+ <% end %>
   <p><%= @nickname %>さんの投稿一覧</p>
   <% @tweets.each do |tweet| %>
       <image src = "<%= tweet.image %> "width= "300" height="300"></image>
