@@ -2,6 +2,50 @@
   <% if user_signed_in? && @user.id == current_user.id %>  
     <%= link_to "プロフィール編集", edit_user_path(current_user) %>
  <% end %>
+ 
+ 
+ <h2>ユーザー詳細ページ</h2>
+<p><%= "id: #{@user.id}" %></p>
+<p><%= "フォロー数: #{@user.follower.count}" %></p>
+<p><%= "フォロワー数: #{@user.followed.count}" %></p>
+<% unless @user == current_user %>
+  <% if current_user.following?(@user) %>
+    <%= link_to 'フォロー外す', unfollow_path(@user.id), method: :POST %>
+  <% else %>
+    <%= link_to 'フォローする', follow_path(@user.id), method: :POST %>
+  <% end %>
+<% end %>
+<p></p>
+
+<h3>フォロー一覧</h3>
+  <% @user.following_user.each do |user| %>
+<table>
+<tr>
+  <td>  <%= user.nickname %> </td>
+  <td><%= link_to '詳細', user_path(user) %></td>
+</tr>
+
+</table>
+<% end %>
+<h3>フォロワー一覧</h3>
+  <% @user.follower_user.each do |user| %>
+<table>
+<tr>
+  <td>  <%= user.nickname %> </td>
+  <td><%= link_to '詳細', user_path(user) %></td>
+</tr>
+
+</table>
+<% end %>
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
  <% if @user.image.attached? %>
  <div class = "user-image">
   <%= image_tag @user.image,size: '250x250' %>
