@@ -1,5 +1,8 @@
 {
   "name": "mypet",
   "private": true,
-  "dependencies": {}
+  "dependencies": {},
+  "devDependencies": {
+    "pulltorefreshjs": "^0.1.20"
+  }
 }
