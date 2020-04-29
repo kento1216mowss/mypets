@@ -8,14 +8,19 @@
 <p><%= "id: #{@user.id}" %></p>
 <p><%= "フォロー数: #{@user.follower.count}" %></p>
 <p><%= "フォロワー数: #{@user.followed.count}" %></p>
-<% unless @user == current_user %>
-  <% if current_user.following?(@user) %>
-    <%= link_to 'フォロー外す', unfollow_path(@user.id), method: :POST %>
-  <% else %>
-    <%= link_to 'フォローする', follow_path(@user.id), method: :POST %>
+
+
+
+ <% if user_signed_in? %>  
+   <% unless @user == current_user %>
+      <% if current_user.following?(@user) %>
+        <%= link_to 'フォロー外す', unfollow_path(@user.id), method: :POST %>
+      <% else %>
+        <%= link_to 'フォローする', follow_path(@user.id), method: :POST %>
+      <% end %>
   <% end %>
 <% end %>
-<p></p>
+
 
 <h3>フォロー一覧</h3>
   <% @user.following_user.each do |user| %>
@@ -47,10 +52,13 @@
  
 
  <% if @user.image.attached? %>
- <div class = "user-image">
-  <%= image_tag @user.image,size: '250x250' %>
- </div> 
-<% end %>
+   <div class = "user-image">
+    <%= image_tag @user.image,size: '250x250' %>
+   </div> 
+ <% else %>
+    <%= image_tag 'dog.jpeg',size: '250x250' %>
+   
+ <% end %>
 
   <p><%= @nickname %>さんの投稿一覧</p>
   <% @tweets.each do |tweet| %>

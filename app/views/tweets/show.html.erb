@@ -1,7 +1,10 @@
  <article>
     
       <header>
+            <div class="buttons_<%= @tweet.id %>"><%= render partial: 'likes/like' %></div>
+
          <a href="/users/<%= @tweet.user_id %>">
+           
           <div class = "user-name">
             <%= @tweet.user.nickname %>
           </div>  

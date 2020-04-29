@@ -34,11 +34,14 @@ header h1 {
 }
 nav ul  {
   float: right;
-   display: flex;
+  display: flex;
+  
 }
 nav li {
   padding: 30px 20px;
   list-style: none;
+   
+   
    
 }
 .main {
@@ -72,4 +75,3 @@ article {
   height: 250px;
   width: 250px
 }
-

@@ -10,6 +10,7 @@
   
   
   <article>
+    
     <% @tweets.each do |t| %>
       <div class = "tweet-header">
          <a href="/users/<%= t.user_id %>">
@@ -31,6 +32,7 @@
         </div>
         <% end %>
       </header>
+
          <a href = "/tweets/<%= t.id %>">
           <div class ="image-box">
                <image src = "<%= t.image %> "width= "600" height="600"></image>

@@ -19,4 +19,3 @@ class UsersController < ApplicationController
     params.require(:user).permit(:nickname, :image)
   end
 end
-

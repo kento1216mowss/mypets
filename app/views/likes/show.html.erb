@@ -1,0 +1,3 @@
+<% @like.each do |like| %>
+ <P><%= link_to like.user.nickname, "/users/#{like.user_id}" %></P>
+<% end %> 
