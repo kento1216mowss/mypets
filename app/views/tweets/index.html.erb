@@ -1,15 +1,31 @@
+<p>検索</p>
+<%= form_tag(root_path,:method => 'get') do %>
+  <%= text_field_tag :search %>
+  <%= submit_tag 'Search', :name => nil %>
+<% end %>
+
+
+<ul>
+  <% @posts.each do |post| %>
+  <li>
+   <a href="/users/<%= post.id %>">
+    <%= post.nickname %>
+  </a>  
+  </li>
+  <% end %>
+</ul>
+
+
+   
   <div class = "recomend-user">
     <% @tweets.each do |tweet| %>
      <image src = "<%= tweet.image %>"width="193" height="130"></image>
     <% end %> 
   </div>
   
-  
-  
 
-  
-  
   <article>
+    
     
     <% @tweets.each do |t| %>
       <div class = "tweet-header">

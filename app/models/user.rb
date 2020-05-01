@@ -2,11 +2,13 @@ class User < ApplicationRecord
   # ユーザーをフォローする
 def follow(user_id)
   follower.create(followed_id: user_id)
+  
 end
 
 # ユーザーのフォローを外す
 def unfollow(user_id)
   follower.find_by(followed_id: user_id).destroy
+  
 end
 
 # フォローしていればtrueを返す
@@ -28,5 +30,10 @@ end
   has_many :follower_user, through: :followed, source: :follower # 自分をフォローしている人
   
   has_many :likes
+  
+  def self.search(search)
+      return User.all unless search
+      User.where(['nickname LIKE ?', "%#{search}%"])
+  end
 
 end

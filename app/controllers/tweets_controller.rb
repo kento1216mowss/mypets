@@ -2,8 +2,12 @@ class TweetsController < ApplicationController
   before_action :move_to_index , only: :new
   
   
+   
     def index
       @tweets = Tweet.all.includes(:user).order("created_at DESC").page(params[:page]).per(5)
+      @posts = User.search(params[:search])
+
+
     end
     
     def show
