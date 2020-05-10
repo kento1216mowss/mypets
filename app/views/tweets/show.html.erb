@@ -1,62 +1,54 @@
- <article>
-    
-      <header>
-            <div class="buttons_<%= @tweet.id %>"><%= render partial: 'likes/like' %></div>
 
-         <a href="/users/<%= @tweet.user_id %>">
-           
-          <div class = "user-name">
-            <%= @tweet.user.nickname %>
-          </div>  
-         </a>  
-          <% if user_signed_in? && current_user.id == @tweet.user_id %>
-              <div class="more">
-                <ul class="more_list">
-                  <li>
-                    <%= link_to '削除', "/tweets/#{@tweet.id}", method: :delete %>
-                  </li>
-                </ul>
-              </div>
+     <div class = "tweet-item ">
+      <div class = "tweet-header">
+       <a href="/users/<%= @tweet.user_id %>">
+        <div class = "user-name">
+         <%= @tweet.user.nickname %>
+        </div>  
+       </a>  
+       <div class="more">
+        <ul class="more_list">
+          <% if user_signed_in? && current_user.id ==  @tweet.user_id %>
+            <li>
+             <%= link_to "/tweets/#{ @tweet.id}", method: :delete do %>
+               <i class="fas fa-trash-alt"></i>
+             <% end %>
+            </li>
           <% end %>
-      </header>
-      <div class ="image-box">
-           <image src = "<%= @tweet.image %> "width= "600" height="600"></image>
+        </ul>
+       </div>
       </div>
-  
-      <div class = "good-box">
-        <span>
-          <btn>
-            <svg>
-              ！
-            </svg>
-          </btn>
-        </span>
-      </div>    
-      <div class = "comment-box">
-        <span>
-          <btn>
-            <svg>
-              C
-            </svg>
-          </btn>
-        </span>
-      </div>    
-
-  <div class="container"> 
-
+       <a href = "/tweets/<%=  @tweet.id %>">
+        <div class ="image-box">
+             <image src = "<%=  @tweet.image %> "width= "594" height="594"></image>
+        </div>
+       </a>  
+       <div class = "text-box">
+          <p><%= @tweet.text %></p>
+        </div>
+     </div>    
+     
+        
+        
+<div class = "comments-box">
+   <div class = "like">
+      <div class="buttons_<%= @tweet.id %>"><%= render partial: 'likes/like' %></div>
+  </div>    
+      
+  <div class="comment-write"> 
       <% if current_user %>
       <%= form_tag("/tweets/#{@tweet.id}/comments", method: :post) do %>
         <textarea name="text" placeholder="コメントする" rows="2" cols="30"></textarea>
-        <input type="submit" value="SENT">
+        <input type="submit" class="send-btn">
       <% end %>
     <% end %>
-      
   </div>  
-  
-  <div class="comments">   
+ 
+
       <h4>＜コメント一覧＞</h4>
       <% if @comments %>
         <% @comments.each do |comment| %>
+        <div class="comment-view">   
           <p>
             <strong><%= link_to comment.user.nickname, "/users/#{comment.user_id}" %>：</strong>
             <%= comment.text %>
@@ -65,5 +57,10 @@
       <% end %>
     </div>
   </div>
+</div>
+  
+  
+  
+  
     
-  </article>
+  

@@ -1,5 +1,10 @@
-<%= form_for (@tweet) do |f| %>
-  <p><%=f.label "画像をアップロード" %><br><%= f.file_field :image %></p>
-  <p><%=f.label "コメント" %><br><%= f.text_field :text %></p>
-  <p><%= f.submit value: '投稿' %></p>
-<% end %>
+
+<div class = "box">
+  <h2>ー投稿ー</h2>
+  <%= form_for (@tweet) do |f| %>
+    <%=f.label "画像を選択" %><br><%= f.file_field :image %><br>
+    <%=f.label "文章" %><br><%= f.text_field :text ,class: "text"%><br>
+    <%= f.submit value: '投稿',class: "send-btn"  %>
+  <% end %>
+</div>  
+</div>

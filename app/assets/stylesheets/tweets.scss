@@ -1,77 +1,169 @@
+
 * {
   box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
-body {
-  margin: 0;
-  background-color: yellow;
-}
-.container {
-  width: 100%;
-  margin: 0 auto;
-  
-  
  
 }
-header {
-  height: 80px;
-  width: 100%;
-  background-color: green;
-  margin: 0 ;
-  padding: 0 200px;
-  position: fixed;
-  top: 0;
-  z-index: 2;
-  
-  
-  
+a:link, a:visited, a:hover, a:active {
+  color: black;
 }
-header h1 {
-  margin: 0;
-  float: left;
-  padding: 20px 0 10px 20px;
-}
-nav ul  {
-  float: right;
-  display: flex;
-  
-}
-nav li {
-  padding: 30px 20px;
-  list-style: none;
-   
-   
-   
-}
-.main {
-  // height: 100px;
-  // margin: 0px auto;
-  padding: 0;
-  margin: 60px auto;
-  
-}
-// index.html --------
-// .recomend-user {
-//   height: 100px;
-//   width: 700px;
-//   margin: 0 auto;
-//   background-color: red;
-  
 
-article {
-  width: 600px;
-  // height: 100%;
-  margin: 0 auto;
-  background-color: pink;
+li {
+  list-style: none;
 }
-// .content_post {
-//   height: 500px;
-//   padding: 50px;
-//   margin: 10px 0;
-// }
-// ===user/show
-.user-image {
-  height: 250px;
-  width: 250px
+// /application.html--------
+ .container {
+   max-width: 1200px ;
+	 margin: 0 auto ;	/* 左右に[auto]を指定することで、真ん中に寄る */
+	 padding: 0 ;
+}
+body {
+  	margin: 0 ;				/* スペース */
+	  padding: 0 ;			/* 余白 */
+  
+     
+      
+}
+.site-header {
+    background: #d3d3d3;
+    padding: 0px 100px;
+    position: fixed;
+    width: 100%;
+    height: 90px;
+    z-index: 5;
+    line-height: auto;
+    top: 0;
+}
+h1 {
+  line-height: 1 ;
+  
+}
+h1 a {
+  
+  font-family: 'Kaushan Script', cursive;
+  text-decoration: none;
+  float: left;
+  height: auto;
+  width: 400px;
+  display     : inline-block;
+  font-weight : bold;
+  color       : #ffffff;
+  text-shadow:  2px  2px 10px #777 ,
+               -2px  2px 10px #777 ,
+                2px -2px 10px #777 ,
+               -2px -2px 10px #777;
+}
+a.font-black:visited {
+  // a:link, a:visited, a:hover, a:active:
+  color: #fff;
+}
+nav ul {
+  float: right;
+  line-height: 1 ;
+}
+nav ul li {
+  margin-left: 30px;
+  float: right;
+}
+
+.main {
+  width: 1200px ;
+	margin: 30px auto ;	/* 左右に[auto]を指定することで、真ん中に寄る */
+	padding: 0 ;
+  position: absolute;
+  top: 90px;
+  z-index: 1;
+}
+.site_header,.h_inner,.cf,.navToggle,.g_nav,.inner,.sp_logo,.logo,.overlay {
+  display: none;
+
+}
+// ///tweet/index.html-------------
+.user-search {
+  	width: 320px ;
+  max-width: 300px;
+  background-color: whitesmoke;
+  position: fixed;
+  left: 70%;
+  margin-top: 50px;
+     float: right;
+}
+.tweet-item {
+	width: 618px ;
+  box-shadow: 0px 20px 40px rgba(0,0,0,0.4);
+  margin-bottom: 50px;
+  float: left;
+}
+.foo {
+  margin-left: 100px;
+}
+.tweet-header {
+    background: #fff;
+    padding: 0px 10px;
+    width: 100%;
+    height: 45px;
+    line-height: auto;
+}
+.user-name {
+  float: left;
+  height: auto;
+  width: auto;
+  margin-top: 10px;
+  font-size: 25px;
+}
+.more_list {
+  float: right;
+}
+.more_list li {
+  float: right;
+  padding: 0 5px;
+}
+
+.text-box {
+  height: 60px;
+  margin-left: 20px;
+}
+// ///tweet/show.html--------------
+.comments-box {
+  position: fixed; 
+  top: 100px;
+  left: 800px;
+  margin-top: 50px;
+  overflow-y: scroll;
+	width: 500px;
+	border-left: 2px solid #ccc;
+	border-right: 2px solid #ccc;
+}
+.comment-write textarea{
+  background-color: #f5f5f5;
+}
+.comment-view {
+  background-color: #f5f5f5;
+}
+///tweets._like.html.----------------------
+
+.like-box {
+  text-align: left;
+}
+
+img {
+	width: 100%;		/* 横幅の90% */
+			/* 縦幅を自動調整 */
+  }
+.fas.fa-grin-hearts,.far{
+  color: #ff4500;
+    background-color: #f5f5f5;
+
+
+  // border: 1px solid black;
+}  
+///tweets,new.html--------------------
+
+///tweets.destroy.html---------------
+.box {
+   max-width: 600px;
+   margin: 0 auto;
+   text-align: center;
+}
+.box h3 {
+  width: 100%;
 }

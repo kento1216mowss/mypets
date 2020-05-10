@@ -1,0 +1,269 @@
+//
+/* タブレット向けレイアウト */
+
+@media screen and (min-width: 768px) {
+  
+}
+
+
+
+
+
+
+
+/* スマホ向けレイアウト */
+@media screen and (max-width: 480px) {
+  .main {
+    margin-top: 0;
+    width: 100%;
+   
+  }
+  h1 a {
+    width: 150px;
+  }
+  .container,.main{
+    width: auto ;
+    padding: 0 10px;	
+  }
+  .box {
+  	// width: 500px;
+  	width: 350px;
+  	max-width: 350px;
+  	
+  }
+	  
+	///tweet.index.html----------
+  .site-header {
+    padding: 0 20px;
+  }
+  .tweet-item {
+    width: auto;
+    padding: 0;
+    // border: none!important;
+    float: none;
+  }
+  .foo {
+   margin-left: 0;
+  }
+  .user-search {
+    width: auto;
+    float: none;
+    position: static;
+    // left: none;
+    
+
+  }
+  img {
+	max-width: 100% ;		/* 横幅の90% */
+	height: auto ;			/* 縦幅を自動調整 */
+  }
+ 
+  .text-box {
+     height: 20px
+  }
+  
+  .site_header {
+		position: static;
+	}
+	.site_header,.h_inner,.cf,.navToggle,.g_nav,.inner,.sp_logo,.logo,.overlay {
+	 display: inline;
+	}
+	
+	///=navigation----------------------------
+	#navToggle {
+		display: block; /*通常時は非表示にしておきます*/
+		position: fixed; /*bodyに対しての絶対位置指定です*/
+		right: 0;
+		top: 0px;
+		width: 50px;
+		height: 50px;
+		cursor: pointer;
+		z-index: 100;
+		background-color: #778899;
+		padding: 10px;
+		border-top-left-radius: 5px;
+		border-bottom-left-radius: 5px;
+		transition: All ease 0.4s;
+		-webkit-transition: All ease 0.4s;
+		-moz-transition: All ease 0.4s;
+		-o-transition: All ease 0.4s;
+		-ms-transition: All ease 0.4s;
+	}
+	.openNav #navToggle {
+		right: 200px;
+	}
+	#navToggle div {
+		position: relative; /*spanの絶対位置指定の親にします*/
+	}
+	#navToggle span {
+		display: block;
+		position: absolute; /*#navToggle div に対して*/
+		width: 100%;
+		border-bottom: 2px solid #fff;
+		transition: All ease-in-out 0.4s;
+		-webkit-transition: All ease-in-out 0.4s;
+		-moz-transition: All ease-in-out 0.4s;
+		-o-transition: All ease-in-out 0.4s;
+		-ms-transition: All ease-in-out 0.4s;
+	}
+	#navToggle span:nth-child(1) {
+		top: 0;
+	}
+	#navToggle span:nth-child(2) {
+		top: 8px;
+	}
+	#navToggle span:nth-child(3) {
+		top: 16px;
+	}
+	#navToggle span:nth-child(4) {
+		top: 23px;
+		border-bottom: none;
+		font-size: 10px;
+		letter-spacing: 0;
+		color: #fff;
+	}
+	 /*最初のspanをマイナス45度に*/
+	.openNav #navToggle span:nth-child(1) {
+		top: 11px;
+		transform: rotate(-45deg);
+		-webkit-transform: rotate(-45deg);
+		-moz-transform: rotate(-45deg);
+		-o-transform: rotate(-45deg);
+		-ms-transform: rotate(-45deg);
+	}
+	 /*2番目と3番目のspanを45度に*/
+	.openNav #navToggle span:nth-child(2),
+	.openNav #navToggle span:nth-child(3) {
+		top: 11px;
+		transform: rotate(45deg);
+		-webkit-transform: rotate(45deg);
+		-moz-transform: rotate(45deg);
+		-o-transform: rotate(45deg);
+		-ms-transform: rotate(45deg);
+	}
+	.g_nav {
+		display: block;
+		margin-left: -2%;
+		flex: auto;
+		position: fixed;
+		top: 0;
+		right: 0;
+		width: 0;
+		height: 100%;
+		box-sizing: border-box;
+		overflow: hidden;
+		padding-top: 0;
+		transition: All ease-in-out 0.4s;
+		-webkit-transition: All ease-in-out 0.4s;
+		-moz-transition: All ease-in-out 0.4s;
+		-o-transition: All ease-in-out 0.4s;
+		-ms-transition: All ease-in-out 0.4s;
+	}
+	/*header menu*/
+	 /*.openNavが付いた要素の中のnavを 縦方向に351px移動（=表示される）*/
+	.openNav .g_nav {
+		z-index: 99;
+		width: 100%;
+		height: 100%;
+	}
+	.g_nav .overlay {
+		width: 100%;
+		height: 100%;
+		background: rgba(0,0,0,0);
+		transition: All ease-in-out 0.4s;
+		-webkit-transition: All ease-in-out 0.4s;
+		-moz-transition: All ease-in-out 0.4s;
+		-o-transition: All ease-in-out 0.4s;
+		-ms-transition: All ease-in-out 0.4s;
+	}
+	.openNav .g_nav .overlay {
+		background: rgba(0,0,0,0.6);
+	}
+	.g_nav .inner {
+		width: 200px;
+		height: 100%;
+		background-color: #fff;
+		position: absolute;
+		right: -200px;
+		transition: All ease-in-out 0.4s;
+		-webkit-transition: All ease-in-out 0.4s;
+		-moz-transition: All ease-in-out 0.4s;
+		-o-transition: All ease-in-out 0.4s;
+		-ms-transition: All ease-in-out 0.4s;
+	}
+	.openNav .g_nav .inner {
+		right: 0;
+	}
+	.g_nav .sp_logo {
+		display: block;
+		padding: 20px 0;
+		font-weight: bold;
+		font-size: 20px;
+		text-align: center;
+	}
+	.g_nav .sp_logo a {
+		color: #000;
+		text-decoration: none;
+	}
+	.g_nav ul{
+		border-top: 1px solid #ccc;
+		border-bottom: 1px solid #efefef;
+		float: none;
+	}
+	.g_nav ul li{
+		float: none;
+		margin: 0;
+		border-bottom: 1px solid #ccc;
+		border-top: 1px solid #efefef;
+	}
+	.g_nav ul li a{
+		display: block;
+		padding: 20px 0;
+		text-align: center;
+	}
+	ul.navi {
+	  display: none;
+	}
+	.comments-box {
+		position: static;
+		width: auto;
+	}
+	////tweets.new.html--------
+	.new { 
+		width: 100%;
+	}
+	
+  
+  ///user.scss------------------------
+  ///user.show.html-------
+ @import 'grip';
+	 .grid {
+	 	 max-width: 480px;
+    font-size: 20px;
+    display: grid;
+    margin: 0 auto;
+	 	 grid-template:
+    " ......  top   ...... " 
+    " ...... ...... ...... " 
+    " ...... center ...... " 
+    " ...... ...... ...... " 
+    "......  bottom ...... " 
+    /auto    100%  auto ;
+	 font-size: 20px;
+	 margin: 0 auto;
+	 
+	 }
+	 .bottom {
+	 	 grid-area: bottom;
+	 	 text-align: center;
+
+	 }
+	 .user-tweet-image {
+	 	width: auto;
+	 		 //text-align: center;
+	 }
+	 //.image {
+	 //	margin: 0 auto;
+	 //}
+	 
+}

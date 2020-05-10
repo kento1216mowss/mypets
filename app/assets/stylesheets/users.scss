@@ -1,3 +1,87 @@
-// Place all the styles related to the users controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+@import 'font-awesome-sprockets';
+@import 'font-awesome';
+@import 'grip';
+.text {
+  border: none;
+  background-color: #dcdcdc;
+}
+.send-btn {
+   display       : inline-block;
+  border-radius : 30%;          /* 角丸       */
+  // font-size     : 18pt;        /* 文字サイズ */
+  text-align    : center;      /* 文字位置   */
+  cursor        : pointer;     /* カーソル   */
+  padding       : 6px 31px;   /* 余白       */
+  background    : #ffffff;     /* 背景色     */
+  color         : #000000;     /* 文字色     */
+  line-height   : 1em;         /* 1行の高さ  */
+  transition    : .3s;         /* なめらか変化 */
+  box-shadow    : 4px 4px 3px #666666;  /* 影の設定 */
+  border        : 2px solid #ffffff;   
+  
+}
+.send-btn:hover {
+  box-shadow    : none;        
+  color         : #000000;     
+  background    : #d3d3d3;    
+}
+.grid {
+  
+    max-width: 1200px;
+    font-size: 20px;
+    display: grid;
+    margin: 0 auto;
+  grid-template:
+    "...... ......  top   ...... ......" 
+    "...... ...... ...... ...... ......" 
+    "...... ...... center ...... ......" 
+    "...... ...... ...... ...... ......" 
+    "...... bottom bottom bottom ......" 
+    /auto  300px  minmax(350px,400px)  300px  auto;
+}
+.top{
+  grid-area: top;
+  text-align: center;
+}
+.user-img {
+  border-radius: 50%;
+  border: 5px solid #f0f8ff;
+  width: 250px;
+  height: 250px;
+}
+
+.grid-center {
+  grid-area: center;
+}
+.user-nickname {
+  height: 50px;
+ 
+}
+.bottom {
+  grid-area: bottom;
+}
+.following-box {
+    text-align: center;
+  p {
+    display: inline;
+    margin-left: 15px;
+  }
+}
+.user-infomation {
+  text-align: center;
+   margin-bottom: 15px;
+   font-family: 'Alegreya Sans SC', sans-serif;
+
+   
+}
+.following {
+   text-align: center;
+}
+
+.user-tweet-image {
+ 
+  margin: 10px ;
+	float: left;
+  height: 300px;
+  width: 300px;
+}

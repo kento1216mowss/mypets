@@ -2,7 +2,10 @@ class UsersController < ApplicationController
   def show
     @user = User.find(params[:id])
     @nickname = @user.nickname
-    @tweets = @user.tweets.order("created_at DESC").page(params[:page]).per(5)
+    @tweets = @user.tweets.order("created_at DESC")
+    @user = User.find_by(id: params[:id])
+    @likes = Like.where(user_id: @user.id)
+
   end
   
   def edit

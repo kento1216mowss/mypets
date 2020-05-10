@@ -1,73 +1,46 @@
-<article>
+<div class = "grid">
+     <div class = "top">
+         <% if @user.image.attached? %>
+         <%= image_tag @user.image,size: '250x250', class: "user-img" %>
+         <% else %>
+         <%= image_tag 'dog.jpeg',size: '250x250', class: "user-img"%>
+         <% end %>
+     </div> 
+     <div class = "grid-center">
+       <div class = "user-infomation">
+            <%= @nickname %>
+          <% if user_signed_in? && @user.id == current_user.id %>  
+              <%= link_to "編集", edit_user_path(current_user) %>
+          <% end %>
+        </div>
+        <div class = "following">
+           <% if user_signed_in? %>  
+            <% unless @user == current_user %>
+               <% if current_user.following?(@user) %>
+                   <%= link_to 'フォロー中', unfollow_path(@user.id), method: :POST %>
+               <%else %>
+                   <%= link_to 'フォローする', follow_path(@user.id), method: :POST %>
+               <% end %>
+            <% end %>
+           <% end %>
+        </div> 
+         
+          
+        <div class = "following-box">
+          <p><%= "#{@user.follower.count}フォロー" %></p>
+          <p><%= "#{@user.followed.count}フォロワー" %></p>
+        </div>  
+     </div>
+ 
+     <div class = "bottom">
+         <p>投稿一覧</p>
+        <% @tweets.each do |tweet| %>
+            <div class = "user-tweet-image">
+              <image src = "<%= tweet.image %> "width= "300" height="300"></image>
+            </div>
+        <% end %>
+      </div>  
   
   
-  <% if user_signed_in? && @user.id == current_user.id %>  
-    <%= link_to "プロフィール編集", edit_user_path(current_user) %>
- <% end %>
- 
- 
- <h2>ユーザー詳細ページ</h2>
-<p><%= "id: #{@user.id}" %></p>
-<p><%= "フォロー数: #{@user.follower.count}" %></p>
-<p><%= "フォロワー数: #{@user.followed.count}" %></p>
-
-
-
- <% if user_signed_in? %>  
-   <% unless @user == current_user %>
-      <% if current_user.following?(@user) %>
-        <%= link_to 'フォロー外す', unfollow_path(@user.id), method: :POST %>
-      <% else %>
-        <%= link_to 'フォローする', follow_path(@user.id), method: :POST %>
-      <% end %>
-  <% end %>
-<% end %>
-
-
-<h3>フォロー一覧</h3>
-  <% @user.following_user.each do |user| %>
-<table>
-<tr>
-  <td>  <%= user.nickname %> </td>
-  <td><%= link_to '詳細', user_path(user) %></td>
-</tr>
-
-</table>
-<% end %>
-<h3>フォロワー一覧</h3>
-  <% @user.follower_user.each do |user| %>
-<table>
-<tr>
-  <td>  <%= user.nickname %> </td>
-  <td><%= link_to '詳細', user_path(user) %></td>
-</tr>
-
-</table>
-<% end %>
- 
- 
- 
- 
- 
- 
- 
- 
-
- <% if @user.image.attached? %>
-   <div class = "user-image">
-    <%= image_tag @user.image,size: '250x250' %>
-   </div> 
- <% else %>
-    <%= image_tag 'dog.jpeg',size: '250x250' %>
-   
- <% end %>
-
-  <p><%= @nickname %>さんの投稿一覧</p>
-  <% @tweets.each do |tweet| %>
-      <image src = "<%= tweet.image %> "width= "300" height="300"></image>
-      <%= simple_format(tweet.text) %>
-      
-  <% end %>
-       <%= link_to_prev_page @tweets, '前のページ', class: "prev" %>
-       <%= link_to_next_page @tweets, '次のページ', class: "next" %>
-</article>
+  
+</div>
