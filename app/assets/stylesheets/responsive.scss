@@ -44,7 +44,7 @@
     "...  top   ..." auto
     "... ...... ..." 10px
     "... bottom ..." 
-    /auto    100%  auto ;
+    /0   100%  0 ;
 	}
 	.topp {
 		grid-area: top;
@@ -58,10 +58,18 @@
   }
   .tweet-item {
   	// margin: 10px auto;
+  	height: 10%;
     width: auto;
     padding: 0;
     float: none;
     margin-bottom: 20px;
+  }
+  .tweet-item-show {
+  	width: auto;
+  	height: 10%;
+  	float: none;
+  	
+  	
   }
   
   .foo {
@@ -75,20 +83,18 @@
     float: none;
     position: static;
   }
-  .image-box {
-  	width: auto;
-  	
-  	// height: auto;
-  	// height: 100%;
+ 
+  
+  .image-box a {
+  	width: 100%;
+  	height: 100%;
   }
-  img {
-	// max-width: 100% ;		/* 横幅の90% */
-	// height: 100% ;			/* 縦幅を自動調整 */
+  .image-box img {
+  	width: 100%;
+  	height: 100%;
   }
  
-  .text-box {
-     //height: 20px
-  }
+  
   
   .site_header {
 		position: static;
@@ -96,7 +102,16 @@
 	.site_header,.h_inner,.cf,.navToggle,.g_nav,.inner,.sp_logo,.logo,.overlay {
 	 display: inline;
 	}
+	///-tweets.show------------------------------
 	
+	.image-box-show {
+		width: auto;
+		height: 374px;
+	}
+	 .image-box-show img {
+  	width: 100%;
+  	height: 100%;
+  }
 	///=navigation----------------------------
 	#navToggle {
 		display: block; /*通常時は非表示にしておきます*/
