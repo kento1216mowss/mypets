@@ -18,7 +18,8 @@ li {
 }
 body {
   	margin: 0 ;				/* スペース */
-	  padding: 0 ;			/* 余白 */
+	  padding: 0 ;			
+	  background-color: #a5c9c1;/* 余白 */
   
      
       
@@ -77,38 +78,55 @@ nav ul li {
   display: none;
 
 }
+
 // ///tweet/index.html-------------
+.grid-top {
+  display: grid;
+  grid-template:
+    "... ...... ...... ...... ..." 10px
+    "... ......  top   ...... ..." auto
+    "... ...... ...... ...... ..." 20px
+    "... bottom bottom bottom ..." 
+    /auto  300px  minmax(350px,400px)  300px  auto;
+}
+.topp {
+  grid-area: top;
+}
+.bottomm {
+  grid-area: bottom;
+}
 .user-search {
   	width: 320px ;
   max-width: 300px;
+  height: 100px;
   background-color: whitesmoke;
-  position: fixed;
-  left: 70%;
-  margin-top: 50px;
-     float: right;
+  margin: 0 auto;
+  height: auto;
 }
 .tweet-item {
-	width: 618px ;
   box-shadow: 0px 20px 40px rgba(0,0,0,0.4);
-  margin-bottom: 50px;
-  float: left;
+  background-color: white;
+  margin: 10px ;
+	float: left;
+  height: auto;
+  width: 300px;
+
 }
 .foo {
-  margin-left: 100px;
+  // margin-left: 100px;
 }
 .tweet-header {
-    background: #fff;
     padding: 0px 10px;
     width: 100%;
-    height: 45px;
+    height: 50px;
     line-height: auto;
 }
 .user-name {
   float: left;
   height: auto;
   width: auto;
-  margin-top: 10px;
-  font-size: 25px;
+  margin-top: 15px;
+  // font-size: 25px;
 }
 .more_list {
   float: right;
@@ -118,8 +136,14 @@ nav ul li {
   padding: 0 5px;
 }
 
+.image-box {
+  // width: 300px;
+  // height: 300px;
+  // top: 0;
+}
+
 .text-box {
-  height: 60px;
+  height: 50px;
   margin-left: 20px;
 }
 // ///tweet/show.html--------------

@@ -5,7 +5,13 @@ Rails.application.routes.draw do
  resources :tweets do
     resources :comments, only: [:create]
  end
- resources :users, only: [:show, :edit, :update]
+ resources :users do
+  member do
+      get :follow
+      get :follower
+      get :like
+    end
+  end
  post 'follow/:id' => 'relationships#follow', as: 'follow' # フォローする
  post 'unfollow/:id' => 'relationships#unfollow', as: 'unfollow' # フォロー外す
  post "likes/:tweet_id/create", to: "likes#create", constraints: {food_id: /\d+/}, as: :likes_create

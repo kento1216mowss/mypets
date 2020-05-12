@@ -59,10 +59,19 @@
 }
 .bottom {
   grid-area: bottom;
+    .post-box {
+      display: flex;
+      a {
+        margin-right: 15px ;
+        
+      }
+  }
+   
 }
+
 .following-box {
     text-align: center;
-  p {
+  p,a {
     display: inline;
     margin-left: 15px;
   }
@@ -84,4 +93,23 @@
 	float: left;
   height: 300px;
   width: 300px;
+}
+///-devise---------------
+
+.devise-box{
+   max-width: 350px;
+   margin: 0 auto;
+   text-align: center;
+   border: 2px solid black;
+   margin-top: 100px;
+   padding: 20px;
+   background-color: #e9967a;
+   
+}
+.field {
+    margin-bottom: 20px;
+}
+.devise-write {
+border: 2px solid black;
+
 }

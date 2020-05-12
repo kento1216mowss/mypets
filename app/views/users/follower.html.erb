@@ -34,14 +34,11 @@
      </div>
  
      <div class = "bottom">
-       <div class = "post-box">
-         <%=link_to "投稿一覧",user_path(@user.id) %>
-         <%=link_to "いいねした投稿",like_user_path(@user.id) %>
-       </div>   
-        <% @tweets.each do |tweet| %>
-              <div class = "user-tweet-image">
-                <image src = "<%= tweet.image %> "width= "300" height="300"></image>
-              </div>
-        <% end %>
+       <h3>フォロワー一覧</h3>
+            <% @user.follower_user.each do |user| %>
+                <td><%= user.nickname %> </td>
+                <td><%= link_to '詳細', user_path(user) %></td>
+          <% end %>
       </div>  
 </div>
+

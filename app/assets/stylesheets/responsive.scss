@@ -14,9 +14,11 @@
 /* スマホ向けレイアウト */
 @media screen and (max-width: 480px) {
   .main {
-    margin-top: 0;
-    width: 100%;
-   
+  	width: 480px;
+  	max-width: 480px;
+    position: static;
+    margin: 120px auto;
+  
   }
   h1 a {
     width: 150px;
@@ -29,37 +31,63 @@
   	// width: 500px;
   	width: 350px;
   	max-width: 350px;
-  	
   }
 	  
 	///tweet.index.html----------
+	.grid-top {
+		 max-width: 480px;
+    font-size: 20px;
+    display: grid;
+    margin: 0 auto;
+	 	 grid-template:    
+	 	"... ...... ..." 
+    "...  top   ..." auto
+    "... ...... ..." 10px
+    "... bottom ..." 
+    /auto    100%  auto ;
+	}
+	.topp {
+		grid-area: top;
+	}
+	.bottomm {
+		margin: 0 auto;
+		grid-area: bottom;
+	}
   .site-header {
     padding: 0 20px;
   }
   .tweet-item {
+  	// margin: 10px auto;
     width: auto;
     padding: 0;
-    // border: none!important;
     float: none;
+    margin-bottom: 20px;
   }
+  
   .foo {
-   margin-left: 0;
+   //margin-left: 0;
+  }
+  .tweet-header {
+  	// height: 20px;
   }
   .user-search {
     width: auto;
     float: none;
     position: static;
-    // left: none;
-    
-
+  }
+  .image-box {
+  	width: auto;
+  	
+  	// height: auto;
+  	// height: 100%;
   }
   img {
-	max-width: 100% ;		/* 横幅の90% */
-	height: auto ;			/* 縦幅を自動調整 */
+	// max-width: 100% ;		/* 横幅の90% */
+	// height: 100% ;			/* 縦幅を自動調整 */
   }
  
   .text-box {
-     height: 20px
+     //height: 20px
   }
   
   .site_header {
@@ -265,5 +293,8 @@
 	 //.image {
 	 //	margin: 0 auto;
 	 //}
-	 
+	 ////devise-----------------------
+	 .devise-box {
+	 	width: auto;
+	 }
 }

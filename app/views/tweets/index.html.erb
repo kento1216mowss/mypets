@@ -1,59 +1,63 @@
-
-<div class = "user-search">
-    <p>検索</p>
-    <%= form_tag(root_path,:method => 'get') do %>
-        <%= text_field_tag :search %>
-        <%= submit_tag 'Search', :name => nil %>
-    <% end %>
-    <ul>
-        <% @posts.each do |post| %>
-          <li>
-             <a href="/users/<%= post.id %>">
-              <%= post.nickname %>
-            </a>  
-          </li>
-        <% end %>
-    </ul>
-</div>    
-
-<article>
-    <% @tweets.each do |t| %>
-     <div class = "tweet-item foo">
-      <div class = "tweet-header">
-       <a href="/users/<%= t.user_id %>">
-        <div class = "user-name">
-         <%= t.user.nickname %>
-        </div>  
-       </a>  
-       <div class="more">
-        <ul class="more_list">
-           <li>
-            <%= link_to "/tweets/#{t.id}", method: :get do %>
-             <i class="fas fa-angle-double-right"></i>
-            <% end %>
-            
-           </li>
-          <% if user_signed_in? && current_user.id == t.user_id %>
+<div class = "grid-top">
+ <div class = "topp">
+  <div class = "user-search">
+      <p>検索</p>
+      <%= form_tag(root_path,:method => 'get') do %>
+          <%= text_field_tag :search %>
+          <%= submit_tag 'Search', :name => nil %>
+      <% end %>
+      <ul>
+          <% @posts.each do |post| %>
             <li>
-             <%= link_to  "/tweets/#{t.id}", method: :delete do %>
-              <i class="fas fa-trash-alt"></i>
-             <% end %>
+               <a href="/users/<%= post.id %>">
+                <%= post.nickname %>
+              </a>  
             </li>
           <% end %>
-        </ul>
-       </div>
-      </div>
-       <a href = "/tweets/<%= t.id %>">
-        <div class ="image-box">
-             <image src = "<%= t.image %> "width= "594" height="594"></image>
+      </ul>
+  </div>    
+ </div>
+  
+  <div class = "bottomm">
+      <% @tweets.each do |t| %>
+       <div class = "tweet-item foo">
+        <div class = "tweet-header">
+         <a href="/users/<%= t.user_id %>">
+          <div class = "user-name">
+           <%= t.user.nickname %>
+          </div>  
+         </a>  
+         <div class="more">
+          <ul class="more_list">
+             <li>
+              <%= link_to "/tweets/#{t.id}", method: :get do %>
+               <i class="fas fa-angle-double-right"></i>
+              <% end %>
+              
+             </li>
+            <% if user_signed_in? && current_user.id == t.user_id %>
+              <li>
+               <%= link_to  "/tweets/#{t.id}", method: :delete do %>
+                <i class="fas fa-trash-alt"></i>
+               <% end %>
+              </li>
+            <% end %>
+          </ul>
+         </div>
         </div>
-       </a>  
-       <div class = "text-box">
-          <p><%=t.text %></p>
-        </div>
-       </div>    
-    <% end %>  
-    
-     <%= link_to_prev_page @tweets, '前のページ', class: "prev" %>
-     <%= link_to_next_page @tweets, '次のページ', class: "next" %>
-</article>
+         
+          <div class ="image-box">
+            <a href = "/tweets/<%= t.id %>">
+                <image src = "<%= t.image %> "width= "300" height="300"></image>
+            </a>  
+          </div>
+         <div class = "text-box">
+            <!--<p><%=t.text %></p>-->
+          </div>
+         </div>    
+      <% end %>  
+                
+        <%= link_to_prev_page @tweets, '前のページ', class: "prev" %>
+       <%= link_to_next_page @tweets, '次のページ', class: "next" %>
+   </div>
+</div>  

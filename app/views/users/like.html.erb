@@ -1,4 +1,4 @@
-<div class = "grid">
+  <div class = "grid">
      <div class = "top">
          <% if @user.image.attached? %>
          <%= image_tag @user.image,size: '250x250', class: "user-img" %>
@@ -37,11 +37,14 @@
        <div class = "post-box">
          <%=link_to "投稿一覧",user_path(@user.id) %>
          <%=link_to "いいねした投稿",like_user_path(@user.id) %>
-       </div>   
-        <% @tweets.each do |tweet| %>
-              <div class = "user-tweet-image">
-                <image src = "<%= tweet.image %> "width= "300" height="300"></image>
-              </div>
-        <% end %>
+        </div> 
+             <% @likes.each do |like| %>
+              <% post = Tweet.find_by(id: like.tweet_id) %>
+                <div class = "user-tweet-image">
+                  <image src = "<%= post.image %> "width= "300" height="300"></image>
+                </div>
+             <% end %>
       </div>  
 </div>
+
+    

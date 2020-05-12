@@ -1,18 +1,22 @@
 <div class = "like-box">
 　 <% if user_signed_in? %>
-    <% if current_user.likes.find_by(tweet_id: @tweet.id) %>
-        <div class="like_button_on">
-            <%= link_to likes_delete_path(tweet_id: @tweet.id), {method: "post", remote: true} do %>
-              <i class="fas fa-grin-hearts">いいね！<%= @tweet.likes.count%></i>
-            <% end %>
-        </div>
-    <% else %>
-        <div class="like_button">
-            <%= link_to  likes_create_path(tweet_id: @tweet.id), {method: "post", remote: true} do %>
-              <i class="far fa-grin-hearts">いいね！<%= @tweet.likes.count%></i>
-            <% end %>
-        </div>
-    <% end %>
+        <% if current_user.likes.find_by(tweet_id: @tweet.id) %>
+            <div class="like_button_on">
+                <%= link_to likes_delete_path(tweet_id: @tweet.id), {method: "post", remote: true} do %>
+                  <i class="fas fa-grin-hearts">いいね！<%= @tweet.likes.count%></i>
+                <% end %>
+            </div>
+        <% else %>
+            <div class="like_button">
+                <%= link_to  likes_create_path(tweet_id: @tweet.id), {method: "post", remote: true} do %>
+                  <i class="far fa-grin-hearts">いいね！<%= @tweet.likes.count%></i>
+                <% end %>
+            </div>
+        <% end %>
+   <% else %>
+         <div class="like_button_on">
+           <i class="fas fa-grin-hearts">いいね！<%= @tweet.likes.count%></i>
+         </div>
 　 <% end %>    
 　 <p><a href = "/likes/<%=@tweet.id %>/show/">いいねしたユーザー</a></p>
 </div>
