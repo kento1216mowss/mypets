@@ -71,6 +71,8 @@ gem 'font-awesome-sass'
 gem 'grip-grid-rails'
 gem 'devise-i18n'
 gem 'devise-i18n-views'
-
+group :production do
+  gem 'rails_12factor'
+end
 
 
