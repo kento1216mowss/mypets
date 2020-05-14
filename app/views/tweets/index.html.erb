@@ -1,23 +1,23 @@
 <div class = "grid-top">
- <div class = "topp">
-  <div class = "user-search">
-      <p>検索</p>
-      <%= form_tag(root_path,:method => 'get') do %>
-          <%= text_field_tag :search %>
-          <%= submit_tag 'Search', :name => nil %>
-      <% end %>
-      <ul>
-          <% @posts.each do |post| %>
-            <li>
-               <a href="/users/<%= post.id %>">
-                <%= post.nickname %>
-              </a>  
-            </li>
-          <% end %>
-      </ul>
-  </div>    
- </div>
-  
+    <div class = "topp">
+       <div class = "user-search">
+           <%= form_tag(root_path,:method => 'get') do %>
+               <%= text_field_tag :search, "", placeholder: "ユーザー検索"%>
+               <%= button_tag type: 'submit' ,:name => nil do %>
+                <i class="fas fa-search"></i>
+               <% end %>
+           <% end %>
+           <ul>
+           <% @posts.each do |post| %>
+             <li>
+                <a href="/users/<%= post.id %>">
+                 <%= post.nickname  %>
+               </a>  
+             </li>
+           <% end %>
+           </ul>
+       </div>    
+    </div>
   <div class = "bottomm">
       <% @tweets.each do |t| %>
        <div class = "tweet-item foo">
@@ -52,13 +52,11 @@
             </a>  
           </div>
          <div class = "text-box">
-            <!--<p><%=t.text %></p>-->
+            <p><%=t.text %></p>
           </div>
          </div>    
       <% end %>  
-                           <%= link_to_prev_page @tweets, '前のページ', class: "prev" %>
+       <%= link_to_prev_page @tweets, '前のページ', class: "prev" %>
        <%= link_to_next_page @tweets, '次のページ', class: "next" %>
-
    </div>
-
 </div>  

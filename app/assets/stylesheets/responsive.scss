@@ -1,20 +1,8 @@
-//
-/* タブレット向けレイアウト */
-
-@media screen and (min-width: 768px) {
-  
-}
-
-
-
-
-
-
 
 /* スマホ向けレイアウト */
 @media screen and (max-width: 480px) {
   .main {
-  	width: 480px;
+  	width: auto;
   	max-width: 480px;
     position: static;
     margin: 120px auto;
@@ -68,23 +56,16 @@
   	width: auto;
   	height: 10%;
   	float: none;
-  	
-  	
   }
-  
   .foo {
-   //margin-left: 0;
   }
   .tweet-header {
-  	// height: 20px;
   }
   .user-search {
     width: auto;
     float: none;
     position: static;
   }
- 
-  
   .image-box a {
   	width: 100%;
   	height: 100%;
@@ -93,11 +74,11 @@
   	width: 100%;
   	height: 100%;
   }
- 
-  
-  
   .site_header {
 		position: static;
+	}
+	.text-box p {
+		
 	}
 	.site_header,.h_inner,.cf,.navToggle,.g_nav,.inner,.sp_logo,.logo,.overlay {
 	 display: inline;
@@ -270,7 +251,9 @@
 	.comments-box {
 		position: static;
 		width: auto;
+		margin-top: 20px;
 	}
+	
 	////tweets.new.html--------
 	.new { 
 		width: 100%;
@@ -299,15 +282,14 @@
 	 .bottom {
 	 	 grid-area: bottom;
 	 	 text-align: center;
-
+	 	 margin-top: 20px;
+     
 	 }
 	 .user-tweet-image {
 	 	width: auto;
 	 		 //text-align: center;
 	 }
-	 //.image {
-	 //	margin: 0 auto;
-	 //}
+	
 	 ////devise-----------------------
 	 .devise-box {
 	 	width: auto;

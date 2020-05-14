@@ -4,7 +4,7 @@ class TweetsController < ApplicationController
   
    
     def index
-      @tweets = Tweet.all.includes(:user).order("created_at DESC").page(params[:page]).per(5)
+      @tweets = Tweet.all.includes(:user).order("created_at DESC").page(params[:page]).per(12)
       @posts = User.search(params[:search])
 
 

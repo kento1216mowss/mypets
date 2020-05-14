@@ -1,6 +1,7 @@
 
 * {
   box-sizing: border-box;
+  font-family: "yuGothic", sans-serif;
  
 }
 a:link, a:visited, a:hover, a:active {
@@ -26,7 +27,7 @@ body {
 }
 .site-header {
     background: #d3d3d3;
-    padding: 0px 100px;
+    padding: 0px 250px;
     position: fixed;
     width: 100%;
     height: 90px;
@@ -38,6 +39,12 @@ h1 {
   line-height: 1 ;
   
 }
+a {
+    text-decoration: none;
+
+}
+
+
 h1 a {
   
   font-family: 'Kaushan Script', cursive;
@@ -64,7 +71,13 @@ nav ul {
 nav ul li {
   margin-left: 30px;
   float: right;
+  padding: 10px;
+
 }
+nav a {
+  color: red;
+}
+
 
 .main {
   width: 1200px ;
@@ -95,13 +108,27 @@ nav ul li {
 .bottomm {
   grid-area: bottom;
 }
+
+
 .user-search {
-  	width: 320px ;
+  width: 320px ;
   max-width: 300px;
   height: 100px;
   background-color: whitesmoke;
   margin: 0 auto;
   height: auto;
+  overflow-y: scroll;
+  max-height: 200px;
+  padding: 10px;  
+}
+.user-search ul {
+  padding: 0;
+}
+.user-search li {
+  text-align: left;
+  background-image: linear-gradient(180deg,rgba(204,204,204,0) 0%,rgba(204,204,204,0) 98.5%,rgba(100,100,100,100) 100%);
+  background-repeat: repeat-y;
+  line-height: 2.4;
 }
 .tweet-item {
   box-shadow: 0px 20px 40px rgba(0,0,0,0.4);
@@ -109,7 +136,7 @@ nav ul li {
   margin: 10px ;
 	float: left;
   height: 400px;
-  width: 300px;
+  max-width: 300px;
 
 }
 .foo {
@@ -148,20 +175,18 @@ nav ul li {
     top: 0;
 }
 .text-box {
-  // line-height: auto;
   height: 50px;
-  background-color:#f5f5f5;
-  // top: 0;
-  // margin-left: 20px;
+  background-color: #f5f5f5;
+  padding: 0 5px;
+   overflow-y: scroll;
+
 }
 .text-box p {
-  	margin: 0;
-  	
+  width: 100%;
+  margin: 0;
   }
 // ///tweet/show.html--------------
-.tweet-show {
-  position: relative;
-}
+
 .tweet-item-show {
   box-shadow: 0px 20px 40px rgba(0,0,0,0.4);
   background-color: white;
@@ -179,31 +204,40 @@ nav ul li {
   position: absolute;
   top: 0;
 }
+.tweet-show-box {
+  position: relative;
+}
+
+
 .comments-box {
-  position: absolute;
-  right: 0;
-  // position: fixed; 
+  // position:. fixed; 
   // top: 100px;
   // left: 800px;
-  float: right;
   // margin-top: 50px;
-  // margin-left: 100px;
-  overflow-y: scroll;
+  position: absolute;
+  right: 0;
   height: 600px;
+  overflow-y: scroll;
 	width: 500px;
 	border-left: 2px solid #ccc;
 	border-right: 2px solid #ccc;
 }
 .comment-write textarea{
   background-color: #f5f5f5;
-      overflow-y: scroll;
-
 }
 .comment-view {
-    // overflow-y: scroll;
-  height : 400px;
   background-color: #f5f5f5;
+  // padding-left: 10px;
 }
+.comment-view p {
+  background-image: linear-gradient(180deg,rgba(204,204,204,0) 0%,rgba(204,204,204,0) 98.5%,rgba(100,100,100,100) 100%);
+  background-repeat: repeat-y;
+  line-height: 2.4;
+    padding-left: 20px;
+     padding-right: 20px;
+
+}
+
 ///tweets._like.html.----------------------
 
 .like-box {
@@ -215,15 +249,13 @@ img {
 	height: 100%;/* 横幅の90% */
 			/* 縦幅を自動調整 */
   }
-.fas.fa-grin-hearts,.far{
+.fas.fa-heart{
   color: #ff4500;
-    background-color: #f5f5f5;
-
-
-  // border: 1px solid black;
-}  
+}   
+.like-user a{
+  border-bottom: 1px solid black;
+}
 ///tweets,new.html--------------------
-
 ///tweets.destroy.html---------------
 .box {
    max-width: 600px;
@@ -232,4 +264,10 @@ img {
 }
 .box h3 {
   width: 100%;
+}
+///like.show.html0----------------------
+.box p {
+  background-image: linear-gradient(180deg,rgba(204,204,204,0) 0%,rgba(204,204,204,0) 98.5%,rgba(100,100,100,100) 100%);
+  background-repeat: repeat-y;
+  line-height: 2.4;
 }

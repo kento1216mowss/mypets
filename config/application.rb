@@ -12,6 +12,9 @@ module Mypet
     config.load_defaults 5.2
     config.autoload_paths += Dir[Rails.root.join('app', 'uploaders')]
     config.i18n.default_locale = :ja
+    # default-time-zone = 'Asia/Tokyo'
+     config.active_record.default_timezone = :local
+
 
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration can go into files in config/initializers

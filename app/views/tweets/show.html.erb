@@ -1,4 +1,4 @@
-<div class = "tweet-show">
+<div class = "tweeet-show-box">
      <div class = "tweet-item-show">
       <div class = "tweet-header">
        <a href="/users/<%= @tweet.user_id %>">
@@ -15,6 +15,9 @@
              <% end %>
             </li>
           <% end %>
+            <li>
+             <%= time_ago_in_words @tweet.created_at %>
+            </li>
         </ul>
        </div>
       </div>
@@ -24,7 +27,7 @@
         </div>
        </a>  
        <div class = "text-box">
-          <p><%= @tweet.text %></p>
+         <p><%= @tweet.text %></p>
         </div>
      </div>    
      
@@ -45,12 +48,12 @@
   </div>  
  
 
-      <h4>＜コメント一覧＞</h4>
+      <h3>コメント</h3>
       <% if @comments %>
         <% @comments.each do |comment| %>
         <div class="comment-view">   
           <p>
-            <strong><%= link_to comment.user.nickname, "/users/#{comment.user_id}" %>：</strong>
+            <%= link_to comment.user.nickname, "/users/#{comment.user_id}" %>：</strong>
             <%= comment.text %>
           </p>
         <% end %>

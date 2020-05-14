@@ -10,7 +10,9 @@
        <div class = "user-infomation">
             <%= @nickname %>
           <% if user_signed_in? && @user.id == current_user.id %>  
-              <%= link_to "編集", edit_user_path(current_user) %>
+              <%= link_to edit_user_path(current_user)  do %>
+                 <i class="far fa-edit"></i>               
+              <% end %>
           <% end %>
         </div>
         <div class = "following">
@@ -36,7 +38,7 @@
      <div class = "bottom">
        <div class = "post-box">
          <%=link_to "投稿一覧",user_path(@user.id) %>
-         <%=link_to "いいねした投稿",like_user_path(@user.id) %>
+         <%=link_to "いいねした投稿",like_user_path(@user.id), :style=>"color:#696969;" %>
        </div>   
         <% @tweets.each do |tweet| %>
               <div class = "user-tweet-image">
