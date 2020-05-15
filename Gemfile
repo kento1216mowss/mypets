@@ -7,6 +7,7 @@ ruby '2.5.1'
 gem 'rails', '~> 5.2.1'
 # Use mysql as the database for Active Record
 
+
 	
 gem 'mysql2', '0.3.18'
 
