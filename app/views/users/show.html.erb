@@ -35,17 +35,7 @@
         </div>  
      </div>
  
-     <div class = "bottom">
-       <div class = "post-box">
-         <%=link_to "投稿一覧",user_path(@user.id) %>
-         <%=link_to "いいねした投稿",like_user_path(@user.id), :style=>"color:#696969;" %>
-       </div>   
-        <% @tweets.each do |tweet| %>
-              <div class = "user-tweet-image">
-                <image src = "<%= tweet.image %> "width= "300" height="300"></image>
-              </div>
-        <% end %>
-      </div>  
+     
 </div>
 
 
