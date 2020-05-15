@@ -67,6 +67,7 @@ gem 'jquery-rails'
 gem "jquery-turbolinks"
 gem "kaminari"
 gem 'ransack'
+gem 'font-awesome-sass'
 gem 'grip-grid-rails'
 gem 'devise-i18n'
 gem 'devise-i18n-views'
