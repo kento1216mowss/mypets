@@ -4,7 +4,6 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 ruby '2.5.1'
 
 
-
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.2.1'
 # Use mysql as the database for Active Record
@@ -74,7 +73,6 @@ gem 'grip-grid-rails'
 gem 'devise-i18n'
 gem 'devise-i18n-views'
 gem "aws-sdk-s3", require: false 
-
 group :production do
   gem 'rails_12factor'
 end
