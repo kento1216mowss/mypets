@@ -78,8 +78,9 @@ gem 'font-awesome-sass'
 gem 'grip-grid-rails'
 gem 'devise-i18n'
 gem 'devise-i18n-views'
-gem "aws-sdk-s3", require: false 
+
 group :production do
+  gem "aws-sdk-s3", require: false 
   gem 'rails_12factor'
 end
 
