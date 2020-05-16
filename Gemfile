@@ -81,6 +81,7 @@ gem 'devise-i18n-views'
 
 group :production do
   gem "aws-sdk-s3", require: false 
+  
   gem 'rails_12factor'
 end
 
