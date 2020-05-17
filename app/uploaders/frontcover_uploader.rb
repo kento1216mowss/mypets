@@ -1,16 +1,10 @@
 class FrontcoverUploader < CarrierWave::Uploader::Base
   # Include RMagick or MiniMagick support:
-  include CarrierWave::RMagick
-  include CarrierWave::MiniMagick
+  # include CarrierWave::RMagick
+  # include CarrierWave::MiniMagick
 
   # Choose what kind of storage to use for this uploader:
-  if Rails.env.production?
-    storage :fog
-  else
-    storage :file
-  end
-  
-  
+  storage :file
   # storage :fog
  
  
@@ -51,5 +45,4 @@ class FrontcoverUploader < CarrierWave::Uploader::Base
   # def filename
   #   "something.jpg" if original_filename
   # end
-  
 end
