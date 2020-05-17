@@ -80,11 +80,11 @@ gem 'font-awesome-sass'
 gem 'grip-grid-rails'
 gem 'devise-i18n'
 gem 'devise-i18n-views'
-gem 'fog-aws'
 
 group :production do
   gem "aws-sdk-s3", require: false 
-  
+  gem 'fog-aws'
+
   gem 'rails_12factor'
 end
 
