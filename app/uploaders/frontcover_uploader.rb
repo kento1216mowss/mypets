@@ -6,31 +6,11 @@ class FrontcoverUploader < CarrierWave::Uploader::Base
   # Choose what kind of storage to use for this uploader:
   # storage :file
   # storage :fog
- require 'carrierwave/storage/abstract'
-require 'carrierwave/storage/file'
-require 'carrierwave/storage/fog'
- 
-CarrierWave.configure do |config|
   if Rails.env.production?
-    config.storage :fog
-    config.fog_provider = 'fog/aws'
-    config.fog_directory  = 'my-rails-app-first-bucket-mypet'
-　   config.asset_host = 'https://s3.amazonaws.com/my-rails-app-first-bucket-mypet'  #url間違い
-    　config.fog_credentials = {
-      provider: 'AWS',
-      aws_access_key_id: ENV['AWS_ACCESS_KEY_ID'],
-      aws_secret_access_key: ENV['AWS_SECRET_ACCESS_KEY'],
-      region: ENV['AWS_REGION'],
-      path_style: true
-    }
+    storage :fog
   else
-    config.storage :file
-    config.enable_processing = false if Rails.env.test?
+    storage :file
   end
-end
- 
-CarrierWave::SanitizedFile.sanitize_regexp = /[^[:word:]\.\-\+]/
- 
   # Override the directory where uploaded files will be stored.
   # This is a sensible default for uploaders that are meant to be mounted:
   def store_dir
