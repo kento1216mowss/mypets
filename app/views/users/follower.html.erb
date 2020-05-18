@@ -3,7 +3,7 @@
          <% if @user.image.attached? %>
          <%= image_tag @user.image,size: '250x250', class: "user-img" %>
          <% else %>
-         <%= image_tag 'dog.jpeg',size: '250x250', class: "user-img"%>
+         <%= image_tag "/assets/default.png", size: '250x250', class: "user-img" %>
          <% end %>
      </div> 
      <div class = "grid-center">
