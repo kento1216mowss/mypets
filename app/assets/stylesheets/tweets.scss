@@ -1,7 +1,7 @@
 
 * {
   box-sizing: border-box;
-  font-family: "yuGothic", sans-serif;
+  font-family: sans-serif;
  
 }
 a:link, a:visited, a:hover, a:active {
@@ -20,7 +20,7 @@ li {
 body {
   	margin: 0 ;				/* スペース */
 	  padding: 0 ;			
-	  background-color: #a5c9c1;/* 余白 */
+	  background-color: #20b2aa;/* 余白 */
   
      
       
@@ -47,7 +47,7 @@ a {
 
 h1 a {
   
-  font-family: 'Kaushan Script', cursive;
+  font-family: serif ;
   text-decoration: none;
   float: left;
   height: auto;
@@ -137,6 +137,7 @@ nav a {
 	float: left;
   height: 400px;
   max-width: 300px;
+  border-radius: 2%;
 
 }
 .foo {
@@ -167,6 +168,8 @@ nav a {
   width: 300px;
   height: 300px;
   position: relative;
+  // border: 1px solid #fff;
+
 
 }
 .image-box img {
@@ -178,7 +181,10 @@ nav a {
   height: 50px;
   background-color: #f5f5f5;
   padding: 0 5px;
-   overflow-y: scroll;
+  overflow-y: scroll;
+   border-radius: 2%;
+  // border-radius: 5%;
+
 
 }
 .text-box p {
@@ -210,10 +216,7 @@ nav a {
 
 
 .comments-box {
-  // position:. fixed; 
-  // top: 100px;
-  // left: 800px;
-  // margin-top: 50px;
+  background-color:  #d3d3d3;;
   position: absolute;
   right: 0;
   height: 600px;
@@ -252,9 +255,14 @@ img {
 .fas.fa-heart{
   color: #ff4500;
 }   
-.like-user a{
-  border-bottom: 1px solid black;
+.like_button_on {
+    font-weight: bolder;
+
 }
+.like-user a{
+  // font-weight: bolder;
+}
+
 ///tweets,new.html--------------------
 ///tweets.destroy.html---------------
 .box {
