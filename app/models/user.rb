@@ -1,4 +1,5 @@
 class User < ApplicationRecord
+
   # ユーザーをフォローする
 def follow(user_id)
   follower.create(followed_id: user_id)
@@ -20,6 +21,8 @@ end
   has_one_attached :image 
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
+  validates :image, presence: true
+
   has_many :tweets
   has_many :comments 
   
