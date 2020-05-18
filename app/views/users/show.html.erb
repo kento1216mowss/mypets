@@ -2,13 +2,10 @@
      <div class = "top">
          <% if @user.image.attached? %>
          <%= image_tag @user.image,size: '250x250', class: "user-img" %>
-          <% else %>
+         <% else %>
          <%= image_tag 'dog.jpeg',size: '250x250', class: "user-img"%>
          <% end %>
      </div> 
-     
-     
-     
      <div class = "grid-center">
        <div class = "user-infomation">
             <%= @nickname %>
@@ -35,7 +32,6 @@
           
           <p><%= link_to "#{@user.follower.count}フォロー",follow_user_path(@user.id) %></p>
           <p><%= link_to "#{@user.followed.count}フォロワー",follower_user_path(@user.id) %></p>
-          
         </div>  
      </div>
  
@@ -52,10 +48,6 @@
       </div>  
 </div>
 
-
-             
-             
-             
 
              
              
