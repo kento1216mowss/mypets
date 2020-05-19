@@ -1,11 +1,9 @@
-
 <div class = "box">
   <h3>投稿する</h3>
-  <%= form_for (@tweet) do |f| %>
-    <br><%= f.file_field :image %><br><br>
-        <%= f.text_field :text, placeholder: "text", autofocus: true, maxlength: "20" %>
-    <%= f.submit value: '投稿',class: "send-btn"  %>
-  <% end %>
+    <%= form_for (@tweet) do |f| %>
+      <br><%= f.file_field :image %><br><br>
+          <%= f.text_field :text, placeholder: "text", autofocus: true, maxlength: "20" %>
+      <%= f.submit value: '投稿',class: "send-btn"  %>
+    <% end %>
 </div>  
  
- </div>

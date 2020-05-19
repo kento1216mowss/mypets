@@ -17,4 +17,5 @@ class LikesController < ApplicationController
     @like = Like.all
     
   end
+  
 end

@@ -1,41 +1,38 @@
 <div class = "grid">
      <div class = "top">
          <% if @user.image.attached? %>
-         <%= image_tag @user.image,size: '250x250', class: "user-img" %>
+          <%= image_tag @user.image,size: '250x250', class: "user-img" %>
          <% else %>
-         <%= image_tag "/assets/default.png", size: '250x250', class: "user-img" %>
+          <%= image_tag "/assets/default.png", size: '250x250', class: "user-img" %>
          <% end %>
-         
      </div> 
-     <div class = "grid-center">
-       <div class = "user-infomation">
-            <%= @nickname %>
-          <% if user_signed_in? && @user.id == current_user.id %>  
-              <%= link_to edit_user_path(current_user)  do %>
-                 <i class="far fa-edit"></i>               
+     <!--top-end-->
+       <div class = "grid-center">
+            <div class = "user-infomation">
+                <%= @nickname %>
+              <% if user_signed_in? && @user.id == current_user.id %>  
+                  <%= link_to edit_user_path(current_user)  do %>
+                     <i class="far fa-edit"></i>               
+                  <% end %>
               <% end %>
-          <% end %>
-        </div>
-        <div class = "following">
-           <% if user_signed_in? %>  
-            <% unless @user == current_user %>
-               <% if current_user.following?(@user) %>
-                   <%= link_to 'フォロー中', unfollow_path(@user.id), method: :POST %>
-               <%else %>
-                   <%= link_to 'フォローする', follow_path(@user.id), method: :POST %>
+            </div>
+            <div class = "following">
+               <% if user_signed_in? %>  
+                <% unless @user == current_user %>
+                   <% if current_user.following?(@user) %>
+                       <%= link_to 'フォロー中', unfollow_path(@user.id), method: :POST %>
+                   <%else %>
+                       <%= link_to 'フォローする', follow_path(@user.id), method: :POST %>
+                   <% end %>
+                <% end %>
                <% end %>
-            <% end %>
-           <% end %>
-        </div> 
-         
-          
-        <div class = "following-box">
-          
-          <p><%= link_to "#{@user.follower.count}フォロー",follow_user_path(@user.id) %></p>
-          <p><%= link_to "#{@user.followed.count}フォロワー",follower_user_path(@user.id) %></p>
-        </div>  
+            </div> 
+          <div class = "following-box">
+            <p><%= link_to "#{@user.follower.count}フォロー",follow_user_path(@user.id) %></p>
+            <p><%= link_to "#{@user.followed.count}フォロワー",follower_user_path(@user.id) %></p>
+          </div>  
      </div>
- 
+ <!--grid-center-end-->
      <div class = "bottom">
        <div class = "post-box">
          <%=link_to "投稿一覧",user_path(@user.id) %>
@@ -46,7 +43,8 @@
                 <image src = "<%= tweet.image %> "width= "300" height="300"></image>
               </div>
         <% end %>
-      </div>  
+     </div>  
+     <!--bottom-end-->
 </div>
 
 

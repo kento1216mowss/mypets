@@ -1,4 +1,5 @@
 <div class = "grid">
+  
      <div class = "top">
           <% if @user.image.attached? %>
          <%= image_tag @user.image,size: '250x250', class: "user-img" %>
@@ -6,44 +7,43 @@
          <%= image_tag "/assets/default.png", size: '250x250', class: "user-img" %>
          <% end %>
      </div> 
+     
      <div class = "grid-center">
-       <div class = "user-infomation">
-            <%= @user.nickname %>
-          <% if user_signed_in? && @user.id == current_user.id %>  
-              <%= link_to edit_user_path(current_user)  do %>
-               <i class="far fa-edit"></i>
+          <div class = "user-infomation">
+                <%= @user.nickname %>
+              <% if user_signed_in? && @user.id == current_user.id %>  
+                  <%= link_to edit_user_path(current_user)  do %>
+                   <i class="far fa-edit"></i>
+                  <% end %>
               <% end %>
-          <% end %>
-        </div>
-        <div class = "following">
-           <% if user_signed_in? %>  
-            <% unless @user == current_user %>
-               <% if current_user.following?(@user) %>
-                   <%= link_to 'フォロー中', unfollow_path(@user.id), method: :POST %>
-               <%else %>
-                   <%= link_to 'フォローする', follow_path(@user.id), method: :POST %>
-               <% end %>
-            <% end %>
-           <% end %>
-        </div> 
-         
+          </div>
+          <div class = "following">
+             <% if user_signed_in? %>  
+                <% unless @user == current_user %>
+                     <% if current_user.following?(@user) %>
+                         <%= link_to 'フォロー中', unfollow_path(@user.id), method: :POST %>
+                     <%else %>
+                         <%= link_to 'フォローする', follow_path(@user.id), method: :POST %>
+                     <% end %>
+                <% end %>
+             <% end %>
+          </div> 
           
-        <div class = "following-box">
-          
-          <p><%= link_to "#{@user.follower.count}フォロー",follow_user_path(@user.id) %></p>
-          <p><%= link_to "#{@user.followed.count}フォロワー",follower_user_path(@user.id) %></p>
-        </div>  
-        </div>
+          <div class = "following-box">
+            <p><%= link_to "#{@user.follower.count}フォロー",follow_user_path(@user.id) %></p>
+            <p><%= link_to "#{@user.followed.count}フォロワー",follower_user_path(@user.id) %></p>
+          </div>  
+     </div>
  
-     <div class = "bottom">
-                 <%=link_to "投稿一覧",user_path(@user.id),:style=>"color:#696969;" %>
-                 <%=link_to "いいねした投稿",like_user_path(@user.id), :style=>"color:#696969;" %><br>
+      <div class = "bottom">
+           <%=link_to "投稿一覧",user_path(@user.id),:style=>"color:#696969;" %>
+           <%=link_to "いいねした投稿",like_user_path(@user.id), :style=>"color:#696969;" %><br>
                 <h4>フォロー中</h4>
             <% @user.following_user.each do |user| %>
-            <p>
-              <%= user.nickname %> 
-              <%= link_to '詳細', user_path(user) %>
-            </p>  
+              <p>
+                <%= user.nickname %> 
+                <%= link_to '詳細', user_path(user) %>
+              </p>  
            <% end %>
       </div>  
 </div>
