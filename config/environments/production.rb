@@ -28,7 +28,6 @@ Rails.application.configure do
 
   # Do not fallback to assets pipeline if a precompiled asset is missed.
   config.assets.compile = false
-  config.assets.initialize_on_precompile = false
 
   # `config.assets.precompile` and `config.assets.version` have moved to config/initializers/assets.rb
 
@@ -97,7 +96,7 @@ Rails.application.configure do
   
   config.active_record.dump_schema_after_migration = false
   config.file_watcher = ActiveSupport::EventedFileUpdateChecker
-  config.action_mailer.default_url_options = { host: ' https://rocky-garden-66161.herokuapp.com/' }
+  config.action_mailer.default_url_options = { host:'https://rocky-garden-66161.herokuapp.com/'}
   config.action_mailer.raise_delivery_errors = true
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.smtp_settings = {
