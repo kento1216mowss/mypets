@@ -85,7 +85,7 @@ gem 'dotenv-rails'
 group :production do
   gem "aws-sdk-s3", require: false 
   gem 'fog-aws'
-
+  gem 'dotenv-rails'
   gem 'rails_12factor'
 end
 
