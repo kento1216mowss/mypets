@@ -20,7 +20,7 @@ end
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   has_one_attached :image 
   devise :database_authenticatable, :registerable,
-         :recoverable, :rememberable, :validatable, :confirmable
+        :recoverable, :rememberable, :validatable
   validates :image, presence: true
 
   has_many :tweets
