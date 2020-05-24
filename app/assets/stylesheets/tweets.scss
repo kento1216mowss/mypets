@@ -40,7 +40,6 @@ h1 a {
   text-decoration: none;
   float: left;
   height: auto;
-  // width: 400px;
   display     : inline-block;
   font-weight : bold;
   color       : #ffffff;
@@ -58,7 +57,7 @@ a {
 }
 
 a:hover {
-  background-color: #dcdcdc;
+ border-bottom: 2px solid black;
     }
 
 nav ul {
