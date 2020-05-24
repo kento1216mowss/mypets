@@ -1,27 +1,25 @@
 
 /* スマホ向けレイアウト */
 @media screen and (max-width: 480px) {
+	///// /application.html--------------------------------
+
   .main {
   	width: auto;
   	max-width: 480px;
     position: static;
     margin: 120px auto;
-  
   }
+  
   h1 a {
     width: 150px;
   }
+  
   .container,.main{
     width: auto ;
     padding: 0 10px;	
   }
-  .box {
-  	// width: 500px;
-  	width: 350px;
-  	max-width: 350px;
-  }
 	  
-	///tweet.index.html----------
+	///tweet.index.html------------------------------------
 	.grid-top {
 		 max-width: 480px;
     font-size: 20px;
@@ -34,56 +32,64 @@
     "... bottom ..." 
     /0   100%  0 ;
 	}
+	
 	.topp {
 		grid-area: top;
 	}
+	
 	.bottomm {
 		margin: 0 auto;
 		grid-area: bottom;
 	}
+	
   .site-header {
     padding: 0 20px;
   }
+  
   .tweet-item {
-  	// margin: 10px auto;
   	height: 10%;
     width: auto;
     padding: 0;
     float: none;
     margin-bottom: 20px;
   }
+  
   .tweet-item-show {
   	width: auto;
   	height: 10%;
   	float: none;
   }
-  .foo {
-  }
-  .tweet-header {
-  }
+  
   .user-search {
     width: auto;
     float: none;
     position: static;
   }
+  
   .image-box a {
   	width: 100%;
   	height: 100%;
   }
+  
   .image-box img {
   	width: 100%;
   	height: 100%;
   }
+  
   .site_header {
 		position: static;
 	}
-	.text-box p {
-		
-	}
+	
 	.site_header,.h_inner,.cf,.navToggle,.g_nav,.inner,.sp_logo,.logo,.overlay {
 	 display: inline;
 	}
-	///-tweets.show------------------------------
+	
+	///tweets.destroy.html-------------------------------------
+	.box {
+  	width: 350px;
+  	max-width: 350px;
+  }
+	///-tweets.show---------------------------------------------
 	
 	.image-box-show {
 		width: auto;
@@ -93,7 +99,7 @@
   	width: 100%;
   	height: 100%;
   }
-	///application.htmlm , responsive用----------------------------
+	///application.htmlm , responsive用-------------------------
 	#navToggle {
 		display: block; /*通常時は非表示にしておきます*/
 		position: fixed; /*bodyに対しての絶対位置指定です*/
@@ -113,15 +119,18 @@
 		-o-transition: All ease 0.4s;
 		-ms-transition: All ease 0.4s;
 	}
+	
 	.openNav #navToggle {
 		right: 200px;
 	}
+	
 	#navToggle div {
-		position: relative; /*spanの絶対位置指定の親にします*/
+		position: relative; 
 	}
+	
 	#navToggle span {
 		display: block;
-		position: absolute; /*#navToggle div に対して*/
+		position: absolute; 
 		width: 100%;
 		border-bottom: 2px solid #fff;
 		transition: All ease-in-out 0.4s;
@@ -130,15 +139,19 @@
 		-o-transition: All ease-in-out 0.4s;
 		-ms-transition: All ease-in-out 0.4s;
 	}
+	
 	#navToggle span:nth-child(1) {
 		top: 0;
 	}
+	
 	#navToggle span:nth-child(2) {
 		top: 8px;
 	}
+	
 	#navToggle span:nth-child(3) {
 		top: 16px;
 	}
+	
 	#navToggle span:nth-child(4) {
 		top: 23px;
 		border-bottom: none;
@@ -146,7 +159,7 @@
 		letter-spacing: 0;
 		color: #fff;
 	}
-	 /*最初のspanをマイナス45度に*/
+	
 	.openNav #navToggle span:nth-child(1) {
 		top: 11px;
 		transform: rotate(-45deg);
@@ -155,7 +168,7 @@
 		-o-transform: rotate(-45deg);
 		-ms-transform: rotate(-45deg);
 	}
-	 /*2番目と3番目のspanを45度に*/
+	
 	.openNav #navToggle span:nth-child(2),
 	.openNav #navToggle span:nth-child(3) {
 		top: 11px;
@@ -165,6 +178,7 @@
 		-o-transform: rotate(45deg);
 		-ms-transform: rotate(45deg);
 	}
+	
 	.g_nav {
 		display: block;
 		margin-left: -2%;
@@ -183,13 +197,13 @@
 		-o-transition: All ease-in-out 0.4s;
 		-ms-transition: All ease-in-out 0.4s;
 	}
-	/*header menu*/
-	 /*.openNavが付いた要素の中のnavを 縦方向に351px移動（=表示される）*/
+	
 	.openNav .g_nav {
 		z-index: 99;
 		width: 100%;
 		height: 100%;
 	}
+	
 	.g_nav .overlay {
 		width: 100%;
 		height: 100%;
@@ -200,9 +214,11 @@
 		-o-transition: All ease-in-out 0.4s;
 		-ms-transition: All ease-in-out 0.4s;
 	}
+	
 	.openNav .g_nav .overlay {
 		background: rgba(0,0,0,0.6);
 	}
+	
 	.g_nav .inner {
 		width: 200px;
 		height: 100%;
@@ -215,9 +231,11 @@
 		-o-transition: All ease-in-out 0.4s;
 		-ms-transition: All ease-in-out 0.4s;
 	}
+	
 	.openNav .g_nav .inner {
 		right: 0;
 	}
+	
 	.g_nav .sp_logo {
 		display: block;
 		padding: 20px 0;
@@ -225,59 +243,65 @@
 		font-size: 20px;
 		text-align: center;
 	}
+	
 	.g_nav .sp_logo a {
 		color: #000;
 		text-decoration: none;
 	}
+	
 	.g_nav ul{
 		border-top: 1px solid #ccc;
 		border-bottom: 1px solid #efefef;
 		float: none;
 	}
+	
 	.g_nav ul li{
 		float: none;
 		margin: 0;
 		border-bottom: 1px solid #ccc;
 		border-top: 1px solid #efefef;
 	}
+	
 	.g_nav ul li a{
 		display: block;
 		padding: 20px 0;
 		text-align: center;
 	}
+	
 	ul.navi {
 	  display: none;
 	}
+	
 	.comments-box {
 		position: static;
 		width: auto;
 		margin-top: 20px;
 	}
 	
-	////tweets.new.html--------
+	
+	////tweets.new.html----------------------------
 	.new { 
 		width: 100%;
 	}
 	
   
-  ///user.scss------------------------
-  ///user.show.html-------
+  ///user.scss--------------------------------------
+  ///user.show.html----------------------------------
  @import 'grip';
 	 .grid {
-	  max-width: 480px;
-    font-size: 20px;
-    display: grid;
-    margin: 0 auto;
-	 	 grid-template:
-    " ......  top   ...... " 
-    " ...... ...... ...... " 
-    " ...... center ...... " 
-    " ...... ...... ...... " 
-    "......  bottom ...... " 
-    /auto    100%  auto ;
-	 font-size: 20px;
-	 margin: 0 auto;
-	 
+		  max-width: 480px;
+	    font-size: 20px;
+	    display: grid;
+	    margin: 0 auto;
+		 	 grid-template:
+	    " ......  top   ...... " 
+	    " ...... ...... ...... " 
+	    " ...... center ...... " 
+	    " ...... ...... ...... " 
+	    "......  bottom ...... " 
+	    /auto    100%  auto ;
+		 font-size: 20px;
+		 margin: 0 auto;
 	 }
 	 .bottom {
 	 	 grid-area: bottom;
@@ -286,12 +310,12 @@
      
 	 }
 	 .user-tweet-image {
-	 	width: auto;
-	 		 //text-align: center;
+	 			width: auto;
 	 }
 	
-	 ////devise-----------------------
+	 ////devise----------------------------------------
 	 .devise-box {
 	 	width: auto;
 	 }
+	 
 }
