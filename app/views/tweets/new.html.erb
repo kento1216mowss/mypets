@@ -3,7 +3,7 @@
     <%= form_for (@tweet) do |f| %>
       <br><%= f.file_field :image %><br><br>
           <%= f.text_field :text, placeholder: "text", autofocus: true, maxlength: "20" %>
-      <%= f.submit value: '投稿',class: "send-btn"  %>
+          <input type="submit" class="send-btn">
     <% end %>
 </div>  
  

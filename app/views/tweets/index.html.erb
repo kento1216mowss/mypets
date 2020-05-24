@@ -1,4 +1,5 @@
 <div class = "grid-top">
+ <!--grid-topp-------------------------------------------->
     <div class = "topp">
        <div class = "user-search">
            <%= form_tag(root_path,:method => 'get') do %>
@@ -18,34 +19,40 @@
            </ul>
        </div>    
     </div>
+ <!--grid-topp/END----------------------------------------  -->
+ <!--grid-bottomm-------------------------------------------->
   <div class = "bottomm">
       <% @tweets.each do |t| %>
        <div class = "tweet-item foo">
+        <!--tweet-header------------------->
         <div class = "tweet-header">
-         <a href="/users/<%= t.user_id %>">
-          <div class = "user-name">
-           <%= t.user.nickname %>
-          </div>  
-         </a>  
+          <a href="/users/<%= t.user_id %>">
+           <div class = "user-name">
+            <%= t.user.nickname %>
+           </div>  
+          </a>  
+          <!--nav--------------->
          <div class="more">
-          <ul class="more_list">
-             <li>
-              <%= link_to "/tweets/#{t.id}", method: :get do %>
-               <i class="fas fa-angle-double-right"></i>
+           <ul class="more_list">
+               <li>
+                <%= link_to "/tweets/#{t.id}", method: :get do %>
+                  <i class="fas fa-angle-double-right"></i>
+                <% end %>
+                
+               </li>
+              <% if user_signed_in? && current_user.id == t.user_id %>
+                <li>
+                 <%= link_to  "/tweets/#{t.id}", method: :delete do %>
+                   <i class="fas fa-trash-alt"></i>
+                 <% end %>
+                </li>
               <% end %>
-              
-             </li>
-            <% if user_signed_in? && current_user.id == t.user_id %>
-              <li>
-               <%= link_to  "/tweets/#{t.id}", method: :delete do %>
-                <i class="fas fa-trash-alt"></i>
-               <% end %>
-              </li>
-            <% end %>
-          </ul>
+           </ul>
          </div>
+           <!--nav/END----------->
         </div>
-         
+        <!--tweet-header/END--------------->
+        <!--image&text-box----------------->
           <div class ="image-box">
             <a href = "/tweets/<%= t.id %>">
                 <image src = "<%= t.image %> "width= "300" height="300"></image>
@@ -55,8 +62,11 @@
             <p><%=t.text %></p>
           </div>
          </div>    
+        <!--image&text-box/END----------------->
       <% end %>  
+      <!--jquery.jscroll---------------------->
        <%= link_to_prev_page @tweets, '前のページ', class: "prev" %>
        <%= link_to_next_page @tweets, '次のページ', class: "next" %>
    </div>
+   <!--grid-bottomm/END----------------------------------------->
 </div>  

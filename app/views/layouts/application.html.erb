@@ -13,7 +13,9 @@
   </head>
   
   <body>
-      　<header class = "site-header">
+  <!--ヘッダー/----------------------------------->
+      <header class = "site-header">
+        
          　<h1><%= link_to"MyPet", root_path, class: "font-black" %></h1>
                <nav>
                  <ul class = "navi">
@@ -36,47 +38,54 @@
                    <% end %>          
                  </ul>
                </nav>  
-               <!--スマホナビゲーションーーーーー-->
-<script>
-    $(function() {
-        $('#navToggle').click(function(){//headerに .openNav を付加・削除
-            $('header').toggleClass('openNav');
-        });
-        $('.g_nav .overlay').click(function(){//headerから .openNav を・削除
-            $('header').removeClass('openNav');
-        });
-    });
-</script>
-　<header class="site_header">
-	<div class="h_inner cf">
-		
-		<div id="navToggle">
-			<div>
-				<span></span> <span></span> <span></span> <span>MENU</span>
-			</div>
-		</div>
-		<nav class="g_nav">
-			<div class="inner">
-				<p class="sp_logo">
-					<a href="/">mypet</a>
-				</p>
-				<ul>
-					 <% if user_signed_in? %>  
-                 <li><%= link_to "ログアウト", destroy_user_session_path, method: :delete %></li>
-                 <li><%= link_to "投稿",  new_tweet_path %></li>
-                 <li><%= link_to "アカウント" , user_path(current_user)%></li>
-           <% else %>       
-                 <li><%= link_to "新規登録",  new_user_registration_path %></li>
-                 <li><%= link_to "ログイン",  new_user_session_path %></li>
-           <% end %>  
-				</ul>
-			</div>
-			<div class="overlay"></div>
-		</nav>
-　</div>
-	<!--ーーーーーーーーーーーーーーーーーーーーーーーーーー-->
-</header>
-        </header>     
+               
+ <!--スマホレスポンシブ---------------------------->
+              <script>
+                  $(function() {
+                      $('#navToggle').click(function(){//headerに .openNav を付加・削除
+                          $('header').toggleClass('openNav');
+                      });
+                      $('.g_nav .overlay').click(function(){//headerから .openNav を・削除
+                          $('header').removeClass('openNav');
+                      });
+                  });
+              </script>
+              
+ <!--レスポンシブ/ヘッダー ----------------------------------->
+      
+       <header class="site_header">
+        	<div class="h_inner cf">
+        		<div id="navToggle">
+        			<div>
+        				<span></span> <span></span> <span></span> <span>MENU</span>
+        			</div>
+        		</div>
+        		<nav class="g_nav">
+        			<div class="inner">
+        				<p class="sp_logo">
+        					<a href="/">mypet</a>
+        				</p>
+        				<ul>
+        					 <% if user_signed_in? %>  
+                         <li><%= link_to "ログアウト", destroy_user_session_path, method: :delete %></li>
+                         <li><%= link_to "投稿",  new_tweet_path %></li>
+                         <li><%= link_to "アカウント" , user_path(current_user)%></li>
+                   <% else %>       
+                         <li><%= link_to "新規登録",  new_user_registration_path %></li>
+                         <li><%= link_to "ログイン",  new_user_session_path %></li>
+                   <% end %>  
+        				</ul>
+        			</div>
+        			<div class="overlay"></div>
+        		</nav>
+      　　</div>
+       </header>　
+ <!--レスポンシブ/ヘッダーENDー--------------------------------------->
+   　　 
+      </header>     
+      
+<!--<!-ヘッダー----ENDーーーーーーーーーーーーーーーーーーーーーーー-->--
+
     <div class = "container">
          <main class =" main">
            <%= yield %>

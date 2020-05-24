@@ -18,9 +18,11 @@ class UsersController < ApplicationController
   def follow
      @user = User.find_by(id: params[:id])
   end
+  
   def follower
      @user = User.find_by(id: params[:id])
   end
+  
   def like 
      @user = User.find_by(id: params[:id])
     @likes = Like.where(user_id: @user.id)

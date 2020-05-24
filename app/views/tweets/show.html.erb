@@ -1,11 +1,14 @@
 <div class = "tweeet-show-box">
+  <!--tweet-item-show--------------------------------->
   <div class = "tweet-item-show">
+     <!--tweet-header------------------>
     <div class = "tweet-header">
       <a href="/users/<%= @tweet.user_id %>">
         <div class = "user-name">
          <%= @tweet.user.nickname %>
         </div>  
       </a>  
+      <!--nav--------------------->
        <div class="more">
             <ul class="more_list">
                 <% if user_signed_in? && current_user.id ==  @tweet.user_id %>
@@ -20,17 +23,24 @@
                     </li>
             </ul>
        </div>
+      <!--nav/END-------------------->
+
     </div>
+     <!--tweet-header/EMD----------------->
+     <!--image&text-box----------------->
            <a href = "/tweets/<%=  @tweet.id %>">
               <div class ="image-box-show">
-                   <image src = "<%=  @tweet.image %> "width= "500" height="500"></image>
+                <image src = "<%=  @tweet.image %> "width= "500" height="500"></image>
               </div>
            </a>  
            <div class = "text-box">
              <p><%= @tweet.text %></p>
            </div>
+      <!--image&text-box/END----------------->
+
   </div>    
-         <!--tweet-item-show-end-->
+  <!--tweet-item-show/END--------------------------------->
+
                 
       <div class = "comments-box">
            <div class = "like">
@@ -45,7 +55,6 @@
                 <% end %>
               <% end %>
           </div>  
-         
         
               <h4>~~~コメント~~~</h4>
               <% if @comments %>
