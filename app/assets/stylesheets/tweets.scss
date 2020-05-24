@@ -1,7 +1,7 @@
 
 * {
   box-sizing: border-box;
-  font-family: sans-serif;
+  font-family: Monaco;
  
 }
 a:link, a:visited, a:hover, a:active {
@@ -11,20 +11,19 @@ a:link, a:visited, a:hover, a:active {
 li {
   list-style: none;
 }
-// /application.html--------
+// /application.html--------------------------------
  .container {
    max-width: 1200px ;
-	 margin: 0 auto ;	/* 左右に[auto]を指定することで、真ん中に寄る */
+	 margin: 0 auto ;
 	 padding: 0 ;
 }
+
 body {
-  	margin: 0 ;				/* スペース */
+  	margin: 0 ;	
 	  padding: 0 ;			
-	  background-color: #20b2aa;/* 余白 */
-  
-     
-      
+	  background-color: #20b2aa;
 }
+
 .site-header {
     background: #d3d3d3;
     padding: 0px 250px;
@@ -37,17 +36,14 @@ body {
 }
 h1 {
   line-height: 1 ;
-  
 }
+
 a {
-    text-decoration: none;
-
+  text-decoration: none;
 }
-
 
 h1 a {
-  
-  font-family: serif ;
+  font-family: Monaco ;
   text-decoration: none;
   float: left;
   height: auto;
@@ -61,27 +57,27 @@ h1 a {
                -2px -2px 10px #777;
 }
 a.font-black:visited {
-  // a:link, a:visited, a:hover, a:active:
   color: #fff;
 }
+
 nav ul {
   float: right;
   line-height: 1 ;
 }
+
 nav ul li {
   margin-left: 30px;
   float: right;
   padding: 10px;
-
 }
+
 nav a {
   color: red;
 }
 
-
 .main {
   width: 1200px ;
-	margin: 30px auto ;	/* 左右に[auto]を指定することで、真ん中に寄る */
+	margin: 30px auto ;	
 	padding: 0 ;
   position: absolute;
   top: 90px;
@@ -89,10 +85,9 @@ nav a {
 }
 .site_header,.h_inner,.cf,.navToggle,.g_nav,.inner,.sp_logo,.logo,.overlay {
   display: none;
-
 }
 
-// ///tweet/index.html-------------
+// ///tweet/index.html--------------------------------
 .grid-top {
   display: grid;
   grid-template:
@@ -105,10 +100,10 @@ nav a {
 .topp {
   grid-area: top;
 }
+
 .bottomm {
   grid-area: bottom;
 }
-
 
 .user-search {
   width: 320px ;
@@ -121,15 +116,18 @@ nav a {
   max-height: 200px;
   padding: 10px;  
 }
+
 .user-search ul {
   padding: 0;
 }
+
 .user-search li {
   text-align: left;
   background-image: linear-gradient(180deg,rgba(204,204,204,0) 0%,rgba(204,204,204,0) 98.5%,rgba(100,100,100,100) 100%);
   background-repeat: repeat-y;
   line-height: 2.4;
 }
+
 .tweet-item {
   box-shadow: 0px 20px 40px rgba(0,0,0,0.4);
   background-color: white;
@@ -138,27 +136,24 @@ nav a {
   height: 400px;
   max-width: 300px;
   border-radius: 2%;
+}
 
-}
-.foo {
-  // margin-left: 100px;
-}
 .tweet-header {
     padding: 0px 10px;
-    // width: 100%;
     height: 50px;
     line-height: auto;
 }
+
 .user-name {
   float: left;
   height: auto;
-  // width: auto;
   margin-top: 15px;
-  // font-size: 25px;
 }
+
 .more_list {
   float: right;
 }
+
 .more_list li {
   float: right;
   padding: 0 5px;
@@ -168,30 +163,25 @@ nav a {
   width: 300px;
   height: 300px;
   position: relative;
-  // border: 1px solid #fff;
-
-
 }
+
 .image-box img {
-  // object-fit: contain;
  	position: absolute;
-    top: 0;
+  top: 0;
 }
 .text-box {
   height: 50px;
   background-color: #f5f5f5;
   padding: 0 5px;
   overflow-y: scroll;
-   border-radius: 2%;
-  // border-radius: 5%;
-
-
+  border-radius: 2%;
 }
+
 .text-box p {
   width: 100%;
   margin: 0;
   }
-// ///tweet/show.html--------------
+// ///tweet/show.html--------------------------------
 
 .tweet-item-show {
   box-shadow: 0px 20px 40px rgba(0,0,0,0.4);
@@ -199,21 +189,22 @@ nav a {
 	float: left;
   height: 600px;
   width: 500px;
-
 }
+
 .image-box-show {
   width: 500px;
   height: 500px;
   position: relative;
 }
+
 .image-box-show img {
   position: absolute;
   top: 0;
 }
+
 .tweet-show-box {
   position: relative;
 }
-
 
 .comments-box {
   background-color:  #d3d3d3;;
@@ -225,23 +216,25 @@ nav a {
 	border-left: 2px solid #ccc;
 	border-right: 2px solid #ccc;
 }
+
 .comment-write textarea{
   background-color: #f5f5f5;
 }
+
 .comment-view {
   background-color: #f5f5f5;
-  // padding-left: 10px;
 }
+
 .comment-view p {
   background-image: linear-gradient(180deg,rgba(204,204,204,0) 0%,rgba(204,204,204,0) 98.5%,rgba(100,100,100,100) 100%);
   background-repeat: repeat-y;
   line-height: 2.4;
-    padding-left: 20px;
-     padding-right: 20px;
+  padding-left: 20px;
+  padding-right: 20px;
 
 }
 
-///tweets._like.html.----------------------
+///like._like.html.-----------------------------------
 
 .like-box {
   text-align: left;
@@ -256,15 +249,10 @@ img {
   color: #ff4500;
 }   
 .like_button_on {
-    font-weight: bolder;
-
-}
-.like-user a{
-  // font-weight: bolder;
+  font-weight: bolder;
 }
 
-///tweets,new.html--------------------
-///tweets.destroy.html---------------
+///tweets.destroy.html----------------------------------
 .box {
    max-width: 600px;
    margin: 0 auto;
@@ -273,7 +261,7 @@ img {
 .box h3 {
   width: 100%;
 }
-///like.show.html0----------------------
+///like.like.show.html0----------------------------------
 .box p {
   background-image: linear-gradient(180deg,rgba(204,204,204,0) 0%,rgba(204,204,204,0) 98.5%,rgba(100,100,100,100) 100%);
   background-repeat: repeat-y;
