@@ -1,5 +1,6 @@
 class TweetsController < ApplicationController
-  before_action :move_to_index , only: :new
+  before_action :move_to_index , except: :idnex
+  
    
     def index
       @tweets = Tweet.all.includes(:user).order("created_at DESC").page(params[:page]).per(12)
